@@ -3,18 +3,11 @@ class Personagem():
 
     #cada index na lista é uma linha
     icon = ['ÕÕ', 'µ '] 
-    # ÕÕ
-    # µ 
+    posicao = [30, 16] # [x, y]
+    tamanho = [2,2] #exemplo de tamanho 2x2
+    velocidade = 3 #quanto maior, menor deve ser o divisor ao dividir a cont
 
-    posicao = {
-        'x' : 30,
-        'y' : 16
-    }
-
-    #exemplo de tamanho 2x2
-    tamanho = [2,2]
-
-    #metodos()
+    #metodos
     def setPosicao(x,y):
-        self.posicao['x'] = x 
-        self.posicao['y'] = y
+        self.posicao[0] = x 
+        self.posicao[1] = y
