@@ -1,5 +1,5 @@
 class Heroi:
-    #metodo construtor
+    #método construtor
     def __init__(self):
         self.nome = 'Aldair'
         self.icon = 'ÕÕ\nµ '
