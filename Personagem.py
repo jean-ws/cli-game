@@ -1,6 +1,7 @@
 class Personagem():
     #atributos que TODOS personagens (vilão e heroi) terão
 
+    #TODO criar metodo construtor
     #cada index na lista é uma linha
     icon = ['ÕÕ', 'µ '] 
     posicao = [30, 16] # [x, y]
