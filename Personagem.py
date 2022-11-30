@@ -8,6 +8,6 @@ class Personagem():
     velocidade = 3 #quanto maior, menor deve ser o divisor ao dividir a cont
 
     #metodos
-    def setPosicao(x,y):
+    def setPosicao(self,x,y):
         self.posicao[0] = x 
         self.posicao[1] = y
