@@ -1,7 +1,3 @@
-import os
-import WConio2 #pip install WConio2 
-import cursor #pip install cursor
-
 from aldair import Heroi
 import Inimigo
 import Tela
@@ -18,6 +14,7 @@ status = True
 while status:
     tela.desenhaTela(hero,i1, i2, i3, i4)
 
+    #TODO movimentações
     #TODO verificações para sair do loop (se ... , status = False)
 
     cont += 1 #ao final do While
