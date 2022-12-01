@@ -32,3 +32,4 @@ while True:
 #fora do While: game over
 
 #teste do git Uwu
+#souhdhsdasuidia
