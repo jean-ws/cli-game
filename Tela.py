@@ -1,9 +1,16 @@
 import aldair
 import WConio2
+import cursor #pip install cursor
+
 class Tela():
     def __init__(self):
         self.tamanhoLateral = 50
         self.tamanhoVertical = 20
+        WConio2.clrscr()
+        cursor.hide() 
+        WConio2.textbackground(15)
+        WConio2.textcolor(0)
+        
 
 
     def _bordaCimaBaixo(self):

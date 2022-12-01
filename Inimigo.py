@@ -6,14 +6,26 @@ class Inimigo(Personagem):
 
 class InimigoNormal(Inimigo):
     #atributos que somente o inimigo normal terá
-    hitbox = [[12,33],[13,33],[12,34],[13,34]]
 
     def __init__(self, icon, posicao, tamanho, velocidade):
         self.icon = icon #lista[linha de cima, linha de baixo]
         self.posicao = posicao #lista[x,y]
         self.tamanho = tamanho #lista[n,n] onde o tamanho é NxN
         self.velocidade = velocidade 
-    pass
-    
-    #TODO metodo que altera posicao da hitbox. 
 
+        self.hitbox = [
+            [self.posicao], #char principal
+            [self.posicao[0] + 1, self.posicao[1]], 
+            [self.posicao[0], self.posicao[1] + 1], 
+            [self.posicao[0] + 1,self.posicao[1] + 1]
+            ]
+    
+    def _alteraHitbox(self):
+        self.hitbox = [
+            [self.posicao], #char principal
+            [self.posicao[0] + 1, self.posicao[1]], 
+            [self.posicao[0], self.posicao[1] + 1], 
+            [self.posicao[0] + 1,self.posicao[1] + 1]
+            ]
+
+    #TODO movimentação. Altera a posição
