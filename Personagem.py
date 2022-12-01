@@ -1,12 +1,13 @@
 class Personagem():
     #atributos que TODOS personagens (vilão e heroi) terão
 
-    #TODO criar metodo construtor
-    #cada index na lista é uma linha
-    icon = ['ÕÕ', 'µ '] 
-    posicao = [30, 16] # [x, y]
-    tamanho = [2,2] #exemplo de tamanho 2x2
-    velocidade = 3 #quanto maior, menor deve ser o divisor ao dividir a cont
+    def __init__(self,icon,posicao,tamanho,velocidade):
+        self.icon = icon #cada index na lista é uma linha
+        self.posicao = posicao # [x, y]
+        self.tamanho = tamanho #exemplo de tamanho 2x2
+        self.velocidade = velocidade #quanto maior, menor deve ser o divisor ao dividir a cont
+        pass
+    
 
     #metodos
     def setPosicao(self,x,y):
