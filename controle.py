@@ -1,1 +1,0 @@
-#controle ocorre no while do main chamando os métodos 

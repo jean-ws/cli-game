@@ -13,3 +13,8 @@ class Personagem():
     def setPosicao(self,x,y):
         self.posicao[0] = x 
         self.posicao[1] = y
+
+    #não atravessa limite do mapa
+    def is_out(self):
+        
+        return

@@ -14,4 +14,6 @@ class InimigoNormal(Inimigo):
         self.tamanho = tamanho #lista[n,n] onde o tamanho é NxN
         self.velocidade = velocidade 
     pass
+    
+    #TODO metodo que altera posicao da hitbox. 
 
