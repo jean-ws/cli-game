@@ -1,6 +1,6 @@
-from aldair import Heroi
-import Inimigo
-import Tela
+from Heroi import Heroi
+from Inimigo import *
+from Tela import *
 
 #Cria objetos
 tela = Tela()
