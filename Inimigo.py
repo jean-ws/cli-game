@@ -24,9 +24,9 @@ class InimigoNormal(Inimigo):
     def _alteraHitbox(self):
         self.hitbox = [
             [self.posicao], #char principal
-            [self.posicao[0] + 1, self.posicao[1]], 
+            [self.posicao[0] + 1, self.posicao[1]],
             [self.posicao[0], self.posicao[1] + 1], 
-            [self.posicao[0] + 1,self.posicao[1] + 1]
+            [self.posicao[0] + 1,self.posicao[1] + 1] 
             ]
 
     #TODO movimentação. Altera a posição

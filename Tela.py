@@ -10,7 +10,6 @@ class Tela:
         cursor.hide() 
         WConio2.textbackground(15)
         WConio2.textcolor(0)
-        
 
 
     def _bordaCimaBaixo(self):

@@ -37,5 +37,3 @@ class Heroi(Personagem):
                 self.posicao[1] = self.posicao[1] - 4
             case 's':
                 self.posicao[1] = self.posicao[1] + 4
-            case ' ':
-                self._teleporte()
