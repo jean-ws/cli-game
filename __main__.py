@@ -19,6 +19,5 @@ while status:
 
     cont += 1 #ao final do While
 
-
 #fora do While: game over
-#asiujhdaihusgdaljhsdgaçlksjdghaslçkdhgasçkhjdgaspidaghsdçlkjhasgdçaiosudghaçksljdgbaçsipudasdasdjiolashdjasd
+#TODO game over

@@ -14,7 +14,7 @@ class Personagem():
         self.posicao[0] = x 
         self.posicao[1] = y
 
-    #não atravessa limite do mapa
+    #TODO não atravessa limite do mapa
     def is_out(self):
         
         return

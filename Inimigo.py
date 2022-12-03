@@ -1,5 +1,6 @@
 from Personagem import Personagem
 
+#TODO classe de todos inimigos
 class Inimigo(Personagem):
     #atributos que TODOS inimigos terão
     pass
