@@ -1,4 +1,4 @@
-class Personagem():
+class Personagem:
     #atributos que TODOS personagens (vilão e heroi) terão
 
     def __init__(self,icon,posicao,tamanho,velocidade):

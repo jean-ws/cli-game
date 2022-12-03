@@ -1,8 +1,8 @@
-import aldair
+import Heroi
 import WConio2
 import cursor #pip install cursor
 
-class Tela():
+class Tela:
     def __init__(self):
         self.tamanhoLateral = 50
         self.tamanhoVertical = 20
