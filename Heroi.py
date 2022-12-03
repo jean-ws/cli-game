@@ -1,6 +1,6 @@
 import WConio2
 from Personagem import Personagem
-
+#teste
 class Heroi(Personagem):
     #método construtor
     def __init__(self, icon, posicao, tamanho, velocidade):

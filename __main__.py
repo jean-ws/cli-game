@@ -21,3 +21,4 @@ while status:
 
 
 #fora do While: game over
+#asiujhdaihusgdaljhsdgaçlksjdghaslçkdhgasçkhjdgaspidaghsdçlkjhasgdçaiosudghaçksljdgbaçsipudasdasdjiolashdjasd
