@@ -12,12 +12,15 @@ cont = 0
 status = True
 
 while status:
+
+    #TODO se tecla for pressionada chama o mover personagem
+    #TODO movimentações dos inimigos
+
+    #TODO classe de colisoes - verificações para sair do loop (se ... , status = False)
+
+    
     #tela.desenhaTela(hero,i1, i2, i3, i4)
-    print(hero.posicao)
-
-    #TODO movimentações
-    #TODO verificações para sair do loop (se ... , status = False)
-
+    
     cont += 1 #ao final do While
 
 #fora do While: game over

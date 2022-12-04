@@ -1,4 +1,4 @@
-#import WConio2
+import WConio2
 from Personagem import Personagem
 #teste
 class Heroi(Personagem):
@@ -48,7 +48,6 @@ class Heroi(Personagem):
                 self.posicao[1] = self.posicao[1] - 4
             case 's':
                 self.posicao[1] = self.posicao[1] + 4
-
     
     def _alteraHitbox(self):
         self.hitbox = [
@@ -57,3 +56,10 @@ class Heroi(Personagem):
             [self.posicao[0], self.posicao[1] + 1], 
             [self.posicao[0] + 1,self.posicao[1] + 1] 
             ]
+        
+    def alteraPosicao():
+        pass
+
+    #TODO def getHitbox():
+
+    #TODO def getPosicao():

@@ -1,5 +1,5 @@
 import Heroi
-import WConio2
+import WConio2 #pip install WConio2
 import cursor #pip install cursor
 
 class Tela:
@@ -23,10 +23,10 @@ class Tela:
         match n_char:
 
             #se é o PRIMEIRO caracter da PRIMEIRA linha do heroi
-            case heroi.posicao[0]: 
+            case heroi.hitbox[0][0]: 
                 char = heroi.icon[0][:1]
             #se é o SEGUNDO caracter da PRIMEIRA linha do heroi
-            case heroi.posicao[0] + 1: 
+            case heroi.hitbox[1][0]: 
                 char = heroi.icon[0][1:]
             #se é o PRIMEIRO caracter da SEGUNDA linha do heroi
             case heroi.hitbox[2][0]:
