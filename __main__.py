@@ -1,10 +1,7 @@
-from Heroi import Heroi
-#from Inimigo import *
-#from Tela import *
+from Tela import *
 
 #Cria objetos
-#tela = Tela()
-hero = Heroi(['ÕÕ', 'µ '],[30,16],3)
+tela = Tela()
 #i1, i2, i3, i4 = Inimigo() #só para existirem objetos instanciados por enquanto
 
 #TODO classe de controle (do programa, não do personagem. Score, status, etc...)
@@ -18,7 +15,6 @@ while status:
 
     #TODO classe de colisoes - verificações para sair do loop (se ... , status = False)
 
-    
     #tela.desenhaTela(hero,i1, i2, i3, i4)
     
     cont += 1 #ao final do While
