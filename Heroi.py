@@ -40,7 +40,7 @@ class Heroi(Personagem):
             [self.posicao[0], self.posicao[1] + 1], 
             [self.posicao[0] + 1,self.posicao[1] + 1] 
             ]
-            
+
     #TODO metodos teleporteUp, Down, etc 
     def _teleporte(self):
         #TODO trocar o match case pelo dicionario de funcoes de telporte quando o mesmo estiver pronto
@@ -55,7 +55,7 @@ class Heroi(Personagem):
                 self.posicao[1] = self.posicao[1] + 4
 
     def mover(self):
-        (key, symbol) = WConio2.getch()
+        symbol = WConio2.getkey()
         self.ultimo_movimento = symbol
         movement = self.movimentosAceitados[symbol]
         movement()
