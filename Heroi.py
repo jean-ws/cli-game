@@ -19,26 +19,19 @@ class Heroi(Personagem):
             'a' : self.posicao,
             'b' : [self.posicao[0] + 1, self.posicao[1]],
             'c' : [self.posicao[0], self.posicao[1] + 1],
-            'd' : [self.posicao[0] + 1,self.posicao[1] + 1]
+            'd' : [self.posicao[0] + 1,self.posicao[1] + 1],
         }
 
-    def mover(self):
-        (key, symbol) = WConio2.getch()
-        self.ultimo_movimento = symbol
+        self.movimentosAceitados = {
+        'a': self._moveLeft,
+        'd': self._moveRight,
+        'w': self._moveUp,
+        's': self._moveDown,
+        ' ': self._teleporte
+    }
 
-        match symbol:
-            case 'a':
-                self.posicao[0] = self.posicao[0] - 1
-            case 'd':
-                self.posicao[0] = self.posicao[0] + 1
-            case 'w':
-                self.posicao[1] = self.posicao[1] - 1
-            case 's':
-                self.posicao[1] = self.posicao[1] + 1
-            case ' ':
-                self._teleporte()
-        
     def _teleporte(self):
+        #TODO dicionario com as funcoes teleporteUp, Down, etc para nao precisar usar condicional
         match self.ultimo_movimento:
             case 'a':
                 self.posicao[0] = self.posicao[0] - 9
@@ -48,6 +41,13 @@ class Heroi(Personagem):
                 self.posicao[1] = self.posicao[1] - 4
             case 's':
                 self.posicao[1] = self.posicao[1] + 4
+
+    def mover(self):
+        (key, symbol) = WConio2.getch()
+        self.ultimo_movimento = symbol
+        movement = self.movimentosAceitados[symbol]
+        movement()
+        
     
     def _alteraHitbox(self):
         self.hitbox = [
@@ -56,9 +56,6 @@ class Heroi(Personagem):
             [self.posicao[0], self.posicao[1] + 1], 
             [self.posicao[0] + 1,self.posicao[1] + 1] 
             ]
-        
-    def alteraPosicao():
-        pass
 
     #TODO def getHitbox():
 

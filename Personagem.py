@@ -9,11 +9,18 @@ class Personagem:
     
 
     #metodos
-    def setPosicao(self,x,y):
-        self.posicao[0] = x 
-        self.posicao[1] = y
+    def _moveLeft(self):
+        self.posicao[0] = self.posicao[0] - 1
+
+    def _moveRight(self):
+        self.posicao[0] = self.posicao[0] + 1
+
+    def _moveUp(self):
+        self.posicao[1] = self.posicao[1] - 1
+
+    def _moveDown(self):
+        self.posicao[1] = self.posicao[1] + 1
 
     #TODO não atravessa limite do mapa
     def is_out(self):
-        
-        return
+        pass
