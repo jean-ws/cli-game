@@ -28,10 +28,14 @@ class Heroi(Personagem):
         'w': self._moveUp,
         's': self._moveDown,
         ' ': self._teleporte
-    }
+        }
 
+        #TODO dicionario com as funcoes teleporteUp, Down, etc (valores) de acordo com a ultima tecla pressionada (chaves) para nao precisar usar condicional no _teleporte()
+
+
+    #TODO metodos teleporteUp, Down, etc 
     def _teleporte(self):
-        #TODO dicionario com as funcoes teleporteUp, Down, etc para nao precisar usar condicional
+        #TODO trocar o match case pelo dicionario de funcoes de telporte quando o mesmo estiver pronto
         match self.ultimo_movimento:
             case 'a':
                 self.posicao[0] = self.posicao[0] - 9
