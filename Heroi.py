@@ -33,6 +33,14 @@ class Heroi(Personagem):
         #TODO dicionario com as funcoes teleporteUp, Down, etc (valores) de acordo com a ultima tecla pressionada (chaves) para nao precisar usar condicional no _teleporte()
 
 
+    def _alteraHitbox(self):
+        self.hitbox = [
+            [self.posicao], #char principal
+            [self.posicao[0] + 1, self.posicao[1]],
+            [self.posicao[0], self.posicao[1] + 1], 
+            [self.posicao[0] + 1,self.posicao[1] + 1] 
+            ]
+            
     #TODO metodos teleporteUp, Down, etc 
     def _teleporte(self):
         #TODO trocar o match case pelo dicionario de funcoes de telporte quando o mesmo estiver pronto
@@ -53,13 +61,6 @@ class Heroi(Personagem):
         movement()
         
     
-    def _alteraHitbox(self):
-        self.hitbox = [
-            [self.posicao], #char principal
-            [self.posicao[0] + 1, self.posicao[1]],
-            [self.posicao[0], self.posicao[1] + 1], 
-            [self.posicao[0] + 1,self.posicao[1] + 1] 
-            ]
 
     #TODO def getHitbox():
 
