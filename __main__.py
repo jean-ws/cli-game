@@ -2,7 +2,6 @@ from Tela import *
 
 #Cria objetos
 tela = Tela()
-#i1, i2, i3, i4 = Inimigo() #só para existirem objetos instanciados por enquanto
 
 #TODO classe de controle (do programa, não do personagem. Score, status, etc...)
 cont = 0 
