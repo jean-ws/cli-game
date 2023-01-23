@@ -15,7 +15,7 @@ while status:
 
     #TODO classe de colisoes - verificações para sair do loop (se ... , status = False)
 
-    #tela.desenhaTela(hero,i1, i2, i3, i4)
+    tela.desenhaTela()
     
     cont += 1 #ao final do While
 

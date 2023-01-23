@@ -3,10 +3,10 @@ from Personagem import Personagem
 #teste
 class Heroi(Personagem):
     #método construtor
-    def __init__(self, icon, posicao, velocidade):
-        self.icon = icon #lista[linha de cima, linha de baixo]
-        self.posicao = posicao #lista[x,y]
-        self.velocidade = velocidade
+    def __init__(self):
+        self.icon = ['XX', 'xx'] #lista[linha de cima, linha de baixo]
+        self.posicao = [30,16] #lista[x,y]
+        self.velocidade = 3
         self.ultimo_movimento = ''
         self.hitbox = [
             [self.posicao], #char principal

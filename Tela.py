@@ -6,7 +6,8 @@ import cursor #pip install cursor
 class Tela:
     def __init__(self):
         #TODO criação dos objetos (heroi e inimigos)
-        self.heroi = Heroi(['XX', 'xx'],[30,16],3)
+        self.heroi = Heroi()
+        self.inimigo1 = InimigoNormal()
 
         self.tamanhoLateral = 50
         self.tamanhoVertical = 20
@@ -18,21 +19,24 @@ class Tela:
 
     
     def _bordaCimaBaixo(self):
-        print('-') *  self.tamanhoLateral
+        print('-' * self.tamanhoLateral)
 
-    def _getChar(self, n_char):
+    def _getChar(self, n_coluna):
 
-        char = self.char_background 
+        char = self.char_background
 
-        if n_char == self.heroi.hitbox2['a'][0]:
+        #se tem que printar o heroi
+        if n_coluna == self.heroi.hitbox2['a'][0]:
             char = self.heroi.icon[0][:1]
-        elif n_char == self.heroi.hitbox['b'][0]:
+        elif n_coluna == self.heroi.hitbox2['b'][0]:
             char = self.heroi.icon[0][1:]
-        elif n_char == self.heroi.hitbox2['c'][0]:
+        elif n_coluna == self.heroi.hitbox2['c'][0]:
             char = self.heroi.icon[1][:1]
-        elif n_char == self.heroi.hitbox2['d'][0]:
+        elif n_coluna == self.heroi.hitbox2['d'][0]:
             char = self.heroi.icon[1][1:]
 
+        #TODO se tem que printar o inimigo1
+               
         """
         match n_char:
             #se é o PRIMEIRO caracter da PRIMEIRA linha do heroi
@@ -49,9 +53,9 @@ class Tela:
                 char = self.heroi.icon[1][1:]
             case _:
                 print('default')
-
-            #TODO o mesmo pros char de cada vilão
         """
+
+        #TODO o mesmo pros char de cada vilão
 
         return char
 
@@ -60,24 +64,29 @@ class Tela:
         print('|', end = '')
     
         #TODO se vilao e heroi na mesma linha (IF ambos)
+        #if self.inimigo1.posicao[1] == self.linhaAtual or self.inimigo1.hitbox[2][0] == self.linhaAtual:
+
         #TODO se vilao está na linha (ELIF vilao)
         #Se heroi está na linha (ELIF heroi - igual já está)
-        if self.heroi.posicao[1] == n_linha_atual or self.heroi.hitbox[2][0] == n_linha_atual:
+        if self.heroi.posicao[1] == n_linha_atual or self.heroi.hitbox2["c"][0] == n_linha_atual:
 
-            for n_char in range(self.tamanhoLateral):
-                print(self._getChar(n_char), end = '')
+            for n_coluna in range(self.tamanhoLateral):
+                print(self._getChar(n_coluna), end = '')
 
         else:
             print(self.char_background * self.tamanhoLateral, end = '')
             
-        print('|')       
+        print('|')
         
 
     def _desenhaLinhas(self):
-        self._desenhaLinha()
+        for n_linha_atual in range(self.tamanhoVertical):
+            if n_linha_atual != 0 and n_linha_atual != self.tamanhoVertical:
+                self._desenhaLinha(n_linha_atual)
 
 
     def desenhaTela(self):
         WConio2.gotoxy(0,0)
         self._bordaCimaBaixo()
         self._desenhaLinhas()
+        self._bordaCimaBaixo()
