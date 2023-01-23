@@ -20,7 +20,7 @@ class InimigoNormal(Inimigo):
             [self.posicao[0] + 1,self.posicao[1] + 1]
             ]
     
-    def _alteraHitbox(self):
+    def _attHitbox(self):
         self.hitbox = [
             [self.posicao], #char principal
             [self.posicao[0] + 1, self.posicao[1]],
