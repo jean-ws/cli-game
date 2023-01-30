@@ -16,8 +16,7 @@ while status:
 
     tela.desenhaTela()
     if WConio2.kbhit():
-        key = WConio2.getkey()
-        tela.input(key)
+        tela.input(WConio2.getkey())
     
     cont += 1 #ao final do While
 

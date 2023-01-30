@@ -14,8 +14,8 @@ class Tela:
         self.char_background = ' '
         WConio2.clrscr()
         cursor.hide() 
-        WConio2.textbackground(15)
-        WConio2.textcolor(0)
+        WConio2.textbackground(0)
+        WConio2.textcolor(4)
 
     
     def _bordaCimaBaixo(self):
@@ -27,7 +27,7 @@ class Tela:
 
         #se tem que printar o heroi
         if n_coluna == self.heroi.hitbox['a'][0]:
-            char = self.heroi.icon[0][:1]
+            char = "A"#self.heroi.icon[0][:1]
         elif n_coluna == self.heroi.hitbox['b'][0]:
             char = self.heroi.icon[0][1:]
 
@@ -66,11 +66,11 @@ class Tela:
         #Se heroi está na linha (ELIF heroi - igual já está)
         if self.heroi.posicao[1] == n_linha_atual:
 
-            for n_coluna in range(self.tamanhoLateral):
+            for n_coluna in range(1,self.tamanhoLateral-1):
                 print(self._getChar(n_coluna), end = '')
 
         else:
-            print(self.char_background * self.tamanhoLateral, end = '')
+            print(self.char_background * (self.tamanhoLateral - 2), end = '')
             
         print('|')
         

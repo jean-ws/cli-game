@@ -4,8 +4,8 @@ from Personagem import Personagem
 class Heroi(Personagem):
     #método construtor
     def __init__(self):
-        self.icon = ['██'] #2 caracteres █ que é 0 219 na ascii
-        self.posicao = [25,15] #lista[x,y]
+        self.icon = ['█x'] #2 caracteres █ que é 0 219 na ascii
+        self.posicao = [48,15] #lista[x,y]
         self.velocidade = 3
         self.ultimo_movimento = ''
 
@@ -45,6 +45,7 @@ class Heroi(Personagem):
     def mover(self,movement):
         movement()
         self._attHitbox()
+        print(self.hitbox)
 
     #TODO def getHitbox():
 
