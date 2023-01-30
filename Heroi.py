@@ -5,7 +5,7 @@ class Heroi(Personagem):
     #método construtor
     def __init__(self):
         self.icon = ['█x'] #2 caracteres █ que é 0 219 na ascii
-        self.posicao = [48,15] #lista[x,y]
+        self.posicao = [1,15] #lista[x,y]
         self.velocidade = 3
         self.ultimo_movimento = ''
 
@@ -42,7 +42,8 @@ class Heroi(Personagem):
             case 's':
                 self.posicao[1] = self.posicao[1] + 4
 
-    def mover(self,movement):
+    def mover(self,key):
+        movement = self.movimentosAceitados[key]
         movement()
         self._attHitbox()
         print(self.hitbox)

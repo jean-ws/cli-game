@@ -88,6 +88,5 @@ class Tela:
         self._bordaCimaBaixo()
 
     def input(self,key):
-        movement = self.heroi.movimentosAceitados[key]
+        self.heroi.mover(key)
         self.heroi.ultimo_movimento = key
-        self.heroi.mover(movement)
