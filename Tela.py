@@ -86,3 +86,8 @@ class Tela:
         self._bordaCimaBaixo()
         self._desenhaLinhas()
         self._bordaCimaBaixo()
+
+    def mover(self,key):
+        movement = self.heroi.movimentosAceitados[key]
+        self.heroi.ultimo_movimento = key
+        self.heroi.mover(movement)

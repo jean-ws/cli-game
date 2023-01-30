@@ -15,6 +15,9 @@ while status:
     #TODO classe de colisoes - verificações para sair do loop (se ... , status = False)
 
     tela.desenhaTela()
+    if WConio2.kbhit():
+        key = WConio2.getkey()
+        tela.mover(key)
     
     cont += 1 #ao final do While
 
