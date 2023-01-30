@@ -4,22 +4,15 @@ from Personagem import Personagem
 class Heroi(Personagem):
     #método construtor
     def __init__(self):
-        self.icon = ['XX', 'xx'] #lista[linha de cima, linha de baixo]
-        self.posicao = [30,16] #lista[x,y]
+        self.icon = ['██'] #2 caracteres █ que é 0 219 na ascii
+        self.posicao = [25,15] #lista[x,y]
         self.velocidade = 3
         self.ultimo_movimento = ''
-        self.hitbox = [
-            [self.posicao], #char principal
-            [self.posicao[0] + 1, self.posicao[1]], 
-            [self.posicao[0], self.posicao[1] + 1], 
-            [self.posicao[0] + 1,self.posicao[1] + 1]
-            ]
-        #hitbox[char][x]
-        self.hitbox2 = {
+
+        #hitbox[char] == [x,y]
+        self.hitbox = {
             'a' : self.posicao,
-            'b' : [self.posicao[0] + 1, self.posicao[1]],
-            'c' : [self.posicao[0], self.posicao[1] + 1],
-            'd' : [self.posicao[0] + 1,self.posicao[1] + 1],
+            'b' : [self.posicao[0] + 1, self.posicao[1]]
         }
 
         self.movimentosAceitados = {
@@ -34,12 +27,9 @@ class Heroi(Personagem):
 
 
     def _attHitbox(self):
-        self.hitbox = [
-            [self.posicao], #char principal
-            [self.posicao[0] + 1, self.posicao[1]],
-            [self.posicao[0], self.posicao[1] + 1], 
-            [self.posicao[0] + 1,self.posicao[1] + 1] 
-            ]
+        self.hitbox["a"] = [self.posicao]
+        self.hitbox["b"] = [self.posicao[0]+1, self.posicao[1]]
+            
 
     #TODO metodos teleporteUp, Down, etc 
     def _teleporte(self):

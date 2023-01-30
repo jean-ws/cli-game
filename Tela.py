@@ -26,14 +26,10 @@ class Tela:
         char = self.char_background
 
         #se tem que printar o heroi
-        if n_coluna == self.heroi.hitbox2['a'][0]:
+        if n_coluna == self.heroi.hitbox['a'][0]:
             char = self.heroi.icon[0][:1]
-        elif n_coluna == self.heroi.hitbox2['b'][0]:
+        elif n_coluna == self.heroi.hitbox['b'][0]:
             char = self.heroi.icon[0][1:]
-        elif n_coluna == self.heroi.hitbox2['c'][0]:
-            char = self.heroi.icon[1][:1]
-        elif n_coluna == self.heroi.hitbox2['d'][0]:
-            char = self.heroi.icon[1][1:]
 
         #TODO se tem que printar o inimigo1
                
@@ -68,7 +64,7 @@ class Tela:
 
         #TODO se vilao está na linha (ELIF vilao)
         #Se heroi está na linha (ELIF heroi - igual já está)
-        if self.heroi.posicao[1] == n_linha_atual or self.heroi.hitbox2["c"][0] == n_linha_atual:
+        if self.heroi.posicao[1] == n_linha_atual:
 
             for n_coluna in range(self.tamanhoLateral):
                 print(self._getChar(n_coluna), end = '')
