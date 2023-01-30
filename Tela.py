@@ -27,7 +27,7 @@ class Tela:
 
         #se tem que printar o heroi
         if n_coluna == self.heroi.hitbox['a'][0]:
-            char = "A"#self.heroi.icon[0][:1]
+            char = self.heroi.icon[0][:1]
         elif n_coluna == self.heroi.hitbox['b'][0]:
             char = self.heroi.icon[0][1:]
 

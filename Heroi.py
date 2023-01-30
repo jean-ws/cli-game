@@ -4,7 +4,7 @@ from Personagem import Personagem
 class Heroi(Personagem):
     #método construtor
     def __init__(self):
-        self.icon = ['█x'] #2 caracteres █ que é 0 219 na ascii
+        self.icon = ['██'] #2 caracteres █ que é 0 219 na ascii
         self.posicao = [1,15] #lista[x,y]
         self.velocidade = 3
         self.ultimo_movimento = ''
@@ -26,7 +26,7 @@ class Heroi(Personagem):
         #TODO dicionario com as funcoes teleporteUp, Down, etc (valores) de acordo com a ultima tecla pressionada (chaves) para nao precisar usar condicional no _teleporte()
 
     def _attHitbox(self):
-        self.hitbox["a"] = [self.posicao]
+        self.hitbox["a"] = self.posicao
         self.hitbox["b"] = [self.posicao[0]+1, self.posicao[1]]
             
     #TODO metodos teleporteUp, Down, etc 
@@ -46,7 +46,6 @@ class Heroi(Personagem):
         movement = self.movimentosAceitados[key]
         movement()
         self._attHitbox()
-        print(self.hitbox)
 
     #TODO def getHitbox():
 
