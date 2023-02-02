@@ -7,7 +7,7 @@ class Hero(Character):
         self.icon = ['██'] #2 caracteres █ que é 0 219 na ascii
         self.position = [1,15] #lista[x,y]
         self.speed = 3
-        self.ultimo_movimento = ''
+        self.last_move = ''
 
         #hitbox[char] == [x,y]
         self.hitbox = {
