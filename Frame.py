@@ -1,16 +1,16 @@
-from Heroi import Heroi
-from Inimigo import *
+from Hero import Hero
+from Enemy import *
 import WConio2 #pip install WConio2
 import cursor #pip install cursor
 
-class Tela:
+class Frame:
     def __init__(self):
         #TODO criação dos objetos (heroi e inimigos)
-        self.heroi = Heroi()
-        self.inimigo1 = InimigoNormal()
+        self.hero = Hero()
+        self.enemy1 = NormalEnemy()
 
-        self.tamanhoLateral = 50
-        self.tamanhoVertical = 20
+        self.frameWidth = 50
+        self.frameHeight = 20
         self.char_background = ' '
         WConio2.clrscr()
         cursor.hide() 
@@ -18,20 +18,20 @@ class Tela:
         WConio2.textcolor(4)
 
     
-    def _bordaCimaBaixo(self):
-        print('-' * self.tamanhoLateral)
+    def _borderUpDown(self):
+        print('-' * self.frameWidth)
 
-    def _getChar(self, n_coluna):
+    def _getChar(self, n_column):
 
         char = self.char_background
 
         #se tem que printar o heroi
-        if n_coluna == self.heroi.hitbox['a'][0]:
-            char = self.heroi.icon[0][:1]
-        elif n_coluna == self.heroi.hitbox['b'][0]:
-            char = self.heroi.icon[0][1:]
+        if n_column == self.hero.hitbox['a'][0]:
+            char = self.hero.icon[0][:1]
+        elif n_column == self.hero.hitbox['b'][0]:
+            char = self.hero.icon[0][1:]
 
-        #TODO se tem que printar o inimigo1
+        #TODO se tem que printar o enemy1
                
         """
         match n_char:
@@ -56,37 +56,37 @@ class Tela:
         return char
 
 
-    def _desenhaLinha(self,n_linha_atual):
+    def _drawLine(self,n_current_line):
         print('|', end = '')
     
         #TODO se vilao e heroi na mesma linha (IF ambos)
-        #if self.inimigo1.posicao[1] == self.linhaAtual or self.inimigo1.hitbox[2][0] == self.linhaAtual:
+        #if self.enemy1.position[1] == self.linhaAtual or self.enemy1.hitbox[2][0] == self.linhaAtual:
 
         #TODO se vilao está na linha (ELIF vilao)
         #Se heroi está na linha (ELIF heroi - igual já está)
-        if self.heroi.posicao[1] == n_linha_atual:
+        if self.hero.position[1] == n_current_line:
 
-            for n_coluna in range(1,self.tamanhoLateral-1):
-                print(self._getChar(n_coluna), end = '')
+            for n_column in range(1,self.frameWidth-1):
+                print(self._getChar(n_column), end = '')
 
         else:
-            print(self.char_background * (self.tamanhoLateral - 2), end = '')
+            print(self.char_background * (self.frameWidth - 2), end = '')
             
         print('|')
         
 
-    def _desenhaLinhas(self):
-        for n_linha_atual in range(self.tamanhoVertical):
-            if n_linha_atual != 0 and n_linha_atual != self.tamanhoVertical:
-                self._desenhaLinha(n_linha_atual)
+    def _drawLines(self):
+        for n_current_line in range(self.frameHeight):
+            if n_current_line != 0 and n_current_line != self.frameHeight:
+                self._drawLine(n_current_line)
 
 
-    def desenhaTela(self):
+    def drawFrame(self):
         WConio2.gotoxy(0,0)
-        self._bordaCimaBaixo()
-        self._desenhaLinhas()
-        self._bordaCimaBaixo()
+        self._borderUpDown()
+        self._drawLines()
+        self._borderUpDown()
 
     def input(self,key):
-        self.heroi.mover(key)
-        self.heroi.ultimo_movimento = key
+        self.hero.move(key)
+        self.hero.last_move = key

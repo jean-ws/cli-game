@@ -1,10 +1,10 @@
-from Tela import *
+from Frame import *
 
 #Cria objetos
-tela = Tela()
+frame = Frame()
 
 #TODO classe de controle (do programa, não do personagem. Score, status, etc...)
-cont = 0 
+count = 0 
 status = True
 
 while status:
@@ -14,11 +14,11 @@ while status:
 
     #TODO classe de colisoes - verificações para sair do loop (se ... , status = False)
 
-    tela.desenhaTela()
+    frame.drawFrame()
     if WConio2.kbhit():
-        tela.input(WConio2.getkey())
+        frame.input(WConio2.getkey())
     
-    cont += 1 #ao final do While
+    count += 1 #ao final do While
 
 #fora do While: game over
 #TODO game over
