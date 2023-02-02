@@ -88,5 +88,5 @@ class Frame:
         self._borderUpDown()
 
     def input(self,key):
-        self.hero.move(key)
+        self.hero.move(key, self.frameWidth, self.frameHeight)
         self.hero.last_move = key
