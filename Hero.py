@@ -46,17 +46,22 @@ class Hero(Character):
         self.hitbox["b"] = [self.position[0]+1, self.position[1]]
             
     #TODO metodos teleporteUp, Down, etc 
-    def _teleport(self):
+    def _teleport(self, frame_width, frame_height):
         #TODO trocar o match case pelo dicionario de funcoes de telporte quando o mesmo estiver pronto
+        
         match self.last_move:
             case 'a':
-                self.position[0] = self.position[0] - 9
+                if self.position[0] - 8 >= 1:
+                    self.position[0] = self.position[0] - 8
             case 'd':
-                self.position[0] = self.position[0] + 9
+                if self.position[0] + 8 <= frame_width - 2:
+                    self.position[0] = self.position[0] + 8
             case 'w':
-                self.position[1] = self.position[1] - 4
+                if self.position[1] - 4 >= 1:
+                    self.position[1] = self.position[1] - 4
             case 's':
-                self.position[1] = self.position[1] + 4
+                if self.position[1] + 4 <= frame_height - 2:
+                    self.position[1] = self.position[1] + 4
 
     def move(self,key,frame_width, frame_height):
         movement = self.acceptedMoves[key]
