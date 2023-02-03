@@ -1,14 +1,14 @@
 # cli-game
 
-Um jogo que roda no terminal (Command Line Interface) feito em Python.
-Para manipulação dos caracteres e input do teclado foi utilizada a biblioteca WConio2 (funciona somente para o terminal do Windows).
-A ideia foi focar na lógica e nas estratégias para manipular os caracteres diretamente no terminal.
+A game that runs on command line interface (CLI) made with Python.
+For the characters manipulations and the keyboard input the WConio2 lib was used (it only works to Windows CLI).
+The initial goal was focusing on logic and strategys to manipulate the characters directlly on cli.
 
-## Descrição do jogo:
+## Game description:
 --
 
-## Controles:
+## Controls:
 --
 
-## Inimigos:
+## Enemys:
 --
