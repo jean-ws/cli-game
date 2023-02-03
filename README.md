@@ -8,7 +8,10 @@ The initial goal was focusing on logic and strategys to manipulate the character
 --
 
 ## Controls:
---
+### move up, left, down and right respectively
+- w, a, s, d;
+### teleport
+- space;
 
 ## Enemys:
 --
