@@ -16,11 +16,18 @@ class Hero(Character):
         }
 
         self.acceptedMoves = {
-        'a': self._moveLeft,
-        'd': self._moveRight,
-        'w': self._moveUp,
-        's': self._moveDown,
-        ' ': self._teleport
+            'a': self._moveLeft,
+            'd': self._moveRight,
+            'w': self._moveUp,
+            's': self._moveDown,
+            ' ': self._teleport
+        }
+
+        self.teleport = {
+            'a': self._teleportLeft,
+            'd': self._teleportRight,
+            'w': self._teleportUp,
+            's': self._teleportDown
         }
 
         #TODO dicionario com as funcoes teleporteUp, Down, etc (valores) de acordo com a ultima tecla pressionada (chaves) para nao precisar usar condicional no _teleporte()
@@ -28,24 +35,27 @@ class Hero(Character):
     def _attHitbox(self):
         self.hitbox["a"] = self.position
         self.hitbox["b"] = [self.position[0]+1, self.position[1]]
+    
+    def _teleportLeft(self,frame_width,frame_height):
+        if self.position[0] - 8 >= 1:
+            self.position[0] = self.position[0] - 8
+    
+    def _teleportRight(self,frame_width,frame_height):
+        if self.position[0] + 8 <= frame_width - 2:
+            self.position[0] = self.position[0] + 8
+    
+    def _teleportUp(self,frame_width,frame_height):
+        if self.position[1] - 4 >= 1:
+            self.position[1] = self.position[1] - 4
+    
+    def _teleportDown(self,frame_width,frame_height):
+        if self.position[1] + 4 <= frame_height - 2:
+            self.position[1] = self.position[1] + 4
             
-    #TODO metodos teleporteUp, Down, etc 
     def _teleport(self, frame_width, frame_height):
-        #TODO trocar o match case pelo dicionario de funcoes de telporte quando o mesmo estiver pronto
-        
-        match self.last_move:
-            case 'a':
-                if self.position[0] - 8 >= 1:
-                    self.position[0] = self.position[0] - 8
-            case 'd':
-                if self.position[0] + 8 <= frame_width - 2:
-                    self.position[0] = self.position[0] + 8
-            case 'w':
-                if self.position[1] - 4 >= 1:
-                    self.position[1] = self.position[1] - 4
-            case 's':
-                if self.position[1] + 4 <= frame_height - 2:
-                    self.position[1] = self.position[1] + 4
+        teleport = self.teleport[self.last_move]
+        teleport(frame_width,frame_height)
+    
 
     def move(self,key,frame_width, frame_height):
         if key in self.acceptedMoves:
