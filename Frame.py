@@ -94,4 +94,5 @@ class Frame:
 
     def input(self,key):
         self.hero.move(key, self.frameWidth, self.frameHeight)
-        self.hero.last_move = key
+        if key in self.hero.teleport:
+            self.hero.last_move = key
