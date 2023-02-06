@@ -25,22 +25,6 @@ class Hero(Character):
 
         #TODO dicionario com as funcoes teleporteUp, Down, etc (valores) de acordo com a ultima tecla pressionada (chaves) para nao precisar usar condicional no _teleporte()
 
-    def _moveLeft(self,frame_width, frame_height):
-        if self.position[0] != 1:
-            self.position[0] = self.position[0] - 1
-
-    def _moveRight(self,frame_width, frame_height):
-        if self.position[0] != frame_width - 3:
-            self.position[0] = self.position[0] + 1
-
-    def _moveUp(self,frame_width, frame_height):
-        if self.position[1] != 1:
-            self.position[1] = self.position[1] - 1
-
-    def _moveDown(self,frame_width, frame_height):
-        if self.position[1] != frame_height - 1:
-            self.position[1] = self.position[1] + 1
-
     def _attHitbox(self):
         self.hitbox["a"] = self.position
         self.hitbox["b"] = [self.position[0]+1, self.position[1]]
