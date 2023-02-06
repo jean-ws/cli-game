@@ -5,7 +5,7 @@ class Hero(Character):
     #método construtor
     def __init__(self):
         self.icon = ['██'] #2 caracteres █ que é 0 219 na ascii
-        self.position = [1,15] #lista[x,y]
+        self.position = [9,15] #lista[x,y]
         self.speed = 3
         self.last_move = ''
 

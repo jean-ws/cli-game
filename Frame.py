@@ -21,36 +21,28 @@ class Frame:
     def _borderUpDown(self):
         print('-' * self.frameWidth)
 
-    def _getChar(self, n_column):
+    def _getChar(self, n_column,characters_in_this_line):
 
         char = self.char_background
 
-        #se tem que printar o heroi
-        if n_column == self.hero.hitbox['a'][0]:
-            char = self.hero.icon[0][:1]
-        elif n_column == self.hero.hitbox['b'][0]:
-            char = self.hero.icon[0][1:]
+        if characters_in_this_line['hero']:
+            #se tem que printar o heroi
+            if n_column == self.hero.hitbox['a'][0]:
+                char = self.hero.icon[0][:1]
+            elif n_column == self.hero.hitbox['b'][0]:
+                char = self.hero.icon[0][1:]
+
+        if characters_in_this_line["enemy1"]:
+            if n_column == self.enemy1.hitbox['a'][0]:
+                char = self.enemy1.icon[0][:1]
+            elif n_column == self.enemy1.hitbox['b'][0]:
+                char = self.enemy1.icon[0][1:]
+            elif n_column == self.enemy1.hitbox['c'][0]:
+                char = self.enemy1.icon[1][:1]
+            elif n_column == self.enemy1.hitbox['d'][0]:
+                char = self.enemy1.icon[1][1:]
 
         #TODO se tem que printar o enemy1
-               
-        """
-        match n_char:
-            #se é o PRIMEIRO caracter da PRIMEIRA linha do heroi
-            case self.heroi.hitbox[0][0] : 
-                char = self.heroi.icon[0][:1]
-            #se é o SEGUNDO caracter da PRIMEIRA linha do heroi
-            case self.heroi.hitbox[1][0]: 
-                char = self.heroi.icon[0][1:]
-            #se é o PRIMEIRO caracter da SEGUNDA linha do heroi
-            case self.heroi.hitbox[2][0]:
-                char = self.heroi.icon[1][:1]
-            #se é o SEGUNDO caracter da SEGUNDA linha do heroi
-            case self.heroi.hitbox[3][0]:
-                char = self.heroi.icon[1][1:]
-            case _:
-                print('default')
-        """
-
         #TODO o mesmo pros char de cada vilão
 
         return char
@@ -64,10 +56,20 @@ class Frame:
 
         #TODO se vilao está na linha (ELIF vilao)
         #Se heroi está na linha (ELIF heroi - igual já está)
-        if self.hero.position[1] == n_current_line:
+        characters_in_this_line = {
+            'hero': False,
+            'enemy1': False
+        }
 
+        if self.hero.position[1] == n_current_line:
+            characters_in_this_line['hero'] = True
+            
+        if self.enemy1.position[1] == n_current_line or self.enemy1.hitbox['c'][1] == n_current_line:
+            characters_in_this_line['enemy1'] = True
+
+        if characters_in_this_line['hero'] or characters_in_this_line['enemy1']:
             for n_column in range(1,self.frameWidth-1):
-                print(self._getChar(n_column), end = '')
+                print(self._getChar(n_column,characters_in_this_line), end = '')
 
         else:
             print(self.char_background * (self.frameWidth - 2), end = '')
@@ -86,6 +88,7 @@ class Frame:
         self._borderUpDown()
         self._drawLines()
         self._borderUpDown()
+        #self.enemy1.move('x+',self.frameWidth, self.frameHeight)
 
     def input(self,key):
         self.hero.move(key, self.frameWidth, self.frameHeight)
