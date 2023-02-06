@@ -9,8 +9,8 @@ class Frame:
         self.hero = Hero()
         self.enemy1 = NormalEnemy()
 
-        self.frameWidth = 50
-        self.frameHeight = 20
+        self.frameWidth = 100
+        self.frameHeight = 40
         self.char_background = ' '
         WConio2.clrscr()
         cursor.hide() 
@@ -19,7 +19,7 @@ class Frame:
 
     
     def _borderUpDown(self):
-        print('-' * self.frameWidth)
+        print('█' + '█' * self.frameWidth + '█')
 
     def _getChar(self, n_column,characters_in_this_line):
 
@@ -49,7 +49,7 @@ class Frame:
 
 
     def _drawLine(self,n_current_line):
-        print('|', end = '')
+        print('██', end = '')
     
         #TODO se vilao e heroi na mesma linha (IF ambos)
         #if self.enemy1.position[1] == self.linhaAtual or self.enemy1.hitbox[2][0] == self.linhaAtual:
@@ -74,7 +74,7 @@ class Frame:
         else:
             print(self.char_background * (self.frameWidth - 2), end = '')
             
-        print('|')
+        print('██')
         
 
     def _drawLines(self):
