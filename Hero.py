@@ -48,9 +48,10 @@ class Hero(Character):
                     self.position[1] = self.position[1] + 4
 
     def move(self,key,frame_width, frame_height):
-        movement = self.acceptedMoves[key]
-        movement(frame_width, frame_height)
-        self._attHitbox()
+        if key in self.acceptedMoves:
+            movement = self.acceptedMoves[key]
+            movement(frame_width, frame_height)
+            self._attHitbox()
 
     #TODO def getHitbox():
 
