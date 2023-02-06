@@ -34,10 +34,14 @@ class NormalEnemy(Enemy):
             'd' : [self.position[0] + 1,self.position[1] + 1]
         }
 
-            
-    def move(self,movement,frame_width, frame_height):
-        movement = self.acceptedMoves[movement]
-        movement(frame_width, frame_height)
+    def trackHero():
+        #TODO trackHero
+        pass
+
+    def move(self,hero,frame_width, frame_height):
+        movement = 'x+' #TODO encaixar com o metodo trackHero
+        action = self.acceptedMoves[movement]
+        action(frame_width, frame_height)
         self._attHitbox()
         
     #TODO metodo que segue o heroi (usar velocidade)

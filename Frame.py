@@ -88,7 +88,9 @@ class Frame:
         self._borderUpDown()
         self._drawLines()
         self._borderUpDown()
-        #self.enemy1.move('x+',self.frameWidth, self.frameHeight)
+    
+    def enemy1Move(self):
+        self.enemy1.move(self.hero, self.frameWidth, self.frameHeight)
 
     def input(self,key):
         self.hero.move(key, self.frameWidth, self.frameHeight)
