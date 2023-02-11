@@ -7,16 +7,16 @@ class Character:
         self.speed = speed #quanto maior, menor deve ser o divisor ao dividir a cont
         pass
     
-    def _moveLeft(self,frame_width, frame_height):
+    def _moveLeft(self):
         self.position[0] = self.position[0] - 1
 
-    def _moveRight(self,frame_width, frame_height):
+    def _moveRight(self):
         self.position[0] = self.position[0] + 1
 
-    def _moveUp(self,frame_width, frame_height):
+    def _moveUp(self):
         self.position[1] = self.position[1] - 1
 
-    def _moveDown(self,frame_width, frame_height):
+    def _moveDown(self):
         self.position[1] = self.position[1] + 1
 
     def _attHitbox(self):
