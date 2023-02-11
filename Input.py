@@ -9,17 +9,15 @@ class Input:
             if key == 'a': movement = self.hero.acceptedMoves[key]
             elif key == 'j': movement = self.hunter.acceptedMoves[key]
 
-        elif key == 'd' or 'l' and self.hero.position[0] != frame_width - 3:
+        if key == 'd' or 'l' and self.hero.position[0] != frame_width - 3:
             if key == 'd': movement = self.hero.acceptedMoves[key]
             elif key == 'l': movement = self.hunter.acceptedMoves[key]
 
-        elif key == 'w' or 'i' and self.hero.position[1] != 1:
-            if key == 'w': 
-                movement = self.hero.acceptedMoves[key]
-            elif key == 'i': 
-                movement = self.hunter.acceptedMoves[key]
+        if key == 'w' or 'i' and self.hero.position[1] != 1:
+            if key == 'w': movement = self.hero.acceptedMoves[key]
+            elif key == 'i': movement = self.hunter.acceptedMoves[key]
 
-        elif key == 's' or 'k' and self.hero.position[1] != frame_height - 1:
+        if key == 's' or 'k' and self.hero.position[1] != frame_height - 1:
             if key == 's': movement = self.hero.acceptedMoves[key]
             elif key == 'k': movement = self.hunter.acceptedMoves[key]
 
