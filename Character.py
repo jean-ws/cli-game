@@ -7,24 +7,42 @@ class Character:
         self.speed = speed #quanto maior, menor deve ser o divisor ao dividir a cont
         pass
     
-
-    #metodos
     def _moveLeft(self,frame_width, frame_height):
-        if self.position[0] != 1:
-            self.position[0] = self.position[0] - 1
+        self.position[0] = self.position[0] - 1
 
     def _moveRight(self,frame_width, frame_height):
-        if self.position[0] != frame_width - 3:
-            self.position[0] = self.position[0] + 1
+        self.position[0] = self.position[0] + 1
 
     def _moveUp(self,frame_width, frame_height):
-        if self.position[1] != 1:
-            self.position[1] = self.position[1] - 1
+        self.position[1] = self.position[1] - 1
 
     def _moveDown(self,frame_width, frame_height):
-        if self.position[1] != frame_height - 1:
-            self.position[1] = self.position[1] + 1
+        self.position[1] = self.position[1] + 1
 
-    #TODO não atravessa limite do mapa
-    def isOut(self):
-        pass
+    def _attHitbox(self):
+        self.hitbox["a"] = self.position
+        self.hitbox["b"] = [self.position[0]+1, self.position[1]]
+    
+    def _teleportLeft(self,frame_width,frame_height):
+        if self.position[0] - 8 >= 1:
+            self.position[0] = self.position[0] - 8
+    
+    def _teleportRight(self,frame_width,frame_height):
+        if self.position[0] + 8 <= frame_width - 2:
+            self.position[0] = self.position[0] + 8
+    
+    def _teleportUp(self,frame_width,frame_height):
+        if self.position[1] - 4 >= 1:
+            self.position[1] = self.position[1] - 4
+    
+    def _teleportDown(self,frame_width,frame_height):
+        if self.position[1] + 4 <= frame_height - 2:
+            self.position[1] = self.position[1] + 4
+            
+    def _teleport(self, frame_width, frame_height):
+        teleport = self.teleport[self.last_move]
+        teleport(frame_width,frame_height)
+
+    def move(self, movement):
+        movement()
+        self._attHitbox()

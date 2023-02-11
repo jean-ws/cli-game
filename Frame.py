@@ -1,5 +1,6 @@
-from Hero import Hero
+from Hero import *
 from Hunter import *
+from Input import *
 import WConio2 #pip install WConio2
 import cursor #pip install cursor
 
@@ -8,7 +9,7 @@ class Frame:
         #TODO criação dos objetos (heroi e inimigos)
         self.hero = Hero()
         self.hunter = Hunter()
-
+        self.keyboardInput = Input(self.hero, self.hunter)
         self.frameWidth = 100
         self.frameHeight = 40
         self.char_background = ' '
@@ -93,6 +94,10 @@ class Frame:
         self.hunter.move(self.hero, self.frameWidth, self.frameHeight)
 
     def input(self,key):
+        self.keyboardInput.verifyInput(key, self.frameWidth, self.frameHeight)
+
+        '''
         self.hero.move(key, self.frameWidth, self.frameHeight)
         if key in self.hero.teleport:
             self.hero.last_move = key
+        '''

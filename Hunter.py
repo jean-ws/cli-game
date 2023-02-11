@@ -1,42 +1,31 @@
 from Character import Character
 
+from Character import Character
+#teste
 class Hunter(Character):
-    #atributos que somente o inimigo normal terá
-
+    #método construtor
     def __init__(self):
-        self.icon = ["##","##"] #lista[linha de cima, linha de baixo]
-        self.position = [2,10] #lista[x,y]
-        self.speed = 3 
+        self.icon = ['██'] #2 caracteres █ que é 0 219 na ascii
+        self.position = [12,15] #lista[x,y]
+        self.last_move = ''
+
+        #hitbox[char] == [x,y]
+        self.hitbox = {
+            'a' : self.position,
+            'b' : [self.position[0] + 1, self.position[1]]
+        }
+
         self.acceptedMoves = {
-            'x-': self._moveLeft,
-            'x+': self._moveRight,
-            'y-': self._moveUp,
-            'y+': self._moveDown,
-            }
-
-        self.hitbox = {
-            'a' : self.position,
-            'b' : [self.position[0] + 1, self.position[1]],
-            'c' : [self.position[0], self.position[1] + 1],
-            'd' : [self.position[0] + 1,self.position[1] + 1]
-        }
-    
-    def _attHitbox(self):
-        self.hitbox = {
-            'a' : self.position,
-            'b' : [self.position[0] + 1, self.position[1]],
-            'c' : [self.position[0], self.position[1] + 1],
-            'd' : [self.position[0] + 1,self.position[1] + 1]
+            'j': self._moveLeft,
+            'l': self._moveRight,
+            'i': self._moveUp,
+            'k': self._moveDown,
+            ';': self._teleport
         }
 
-    def trackHero():
-        #TODO trackHero
-        pass
-
-    def move(self,hero,frame_width, frame_height):
-        movement = 'x+' #TODO encaixar com o metodo trackHero
-        action = self.acceptedMoves[movement]
-        action(frame_width, frame_height)
-        self._attHitbox()
-        
-    #TODO metodo que segue o heroi (usar velocidade)
+        self.teleport = {
+            'j': self._teleportLeft,
+            'l': self._teleportRight,
+            'i': self._teleportUp,
+            'k': self._teleportDown
+        }
