@@ -38,13 +38,6 @@ class Frame:
                 char = self.hunter.icon[0][:1]
             elif n_column == self.hunter.hitbox['b'][0]:
                 char = self.hunter.icon[0][1:]
-            elif n_column == self.hunter.hitbox['c'][0]:
-                char = self.hunter.icon[1][:1]
-            elif n_column == self.hunter.hitbox['d'][0]:
-                char = self.hunter.icon[1][1:]
-
-        #TODO se tem que printar o hunter
-        #TODO o mesmo pros char de cada vilão
 
         return char
 
@@ -65,7 +58,7 @@ class Frame:
         if self.hero.position[1] == n_current_line:
             characters_in_this_line['hero'] = True
             
-        if self.hunter.position[1] == n_current_line or self.hunter.hitbox['c'][1] == n_current_line:
+        if self.hunter.position[1] == n_current_line:
             characters_in_this_line['hunter'] = True
 
         if characters_in_this_line['hero'] or characters_in_this_line['hunter']:
