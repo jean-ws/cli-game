@@ -6,16 +6,20 @@ class Input:
     
     def getMove(self, key, frame_width, frame_height):
         if key == 'a' or 'j' and self.hero.position[0] != 1:
-            movement = self.hero.acceptedMoves[key]
+            if key == 'a': movement = self.hero.acceptedMoves[key]
+            elif key == 'j': movement = self.hunter.acceptedMoves[key]
 
         elif key == 'd' or 'l' and self.hero.position[0] != frame_width - 3:
-            movement = self.hero.acceptedMoves[key]
+            if key == 'd': movement = self.hero.acceptedMoves[key]
+            elif key == 'l': movement = self.hunter.acceptedMoves[key]
 
         elif key == 'w' or 'i' and self.hero.position[1] != 1:
-            movement = self.hero.acceptedMoves[key]
+            if key == 'w': movement = self.hero.acceptedMoves[key]
+            elif key == 'i': movement = self.hunter.acceptedMoves[key]
 
         elif key == 's' or 'k' and self.hero.position[1] != frame_height - 1:
-            movement = self.hero.acceptedMoves[key]
+            if key == 's': movement = self.hero.acceptedMoves[key]
+            elif key == 'k': movement = self.hunter.acceptedMoves[key]
 
         if key in self.hero.teleport:
             self.hero.last_move = key
@@ -34,3 +38,4 @@ class Input:
         elif key in self.hunter.acceptedMoves:
             movement = self.getMove(key, frame_width, frame_height)
             self.hunter.move(movement)
+            
