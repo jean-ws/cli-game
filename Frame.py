@@ -9,9 +9,9 @@ class Frame:
         #TODO criação dos objetos (heroi e inimigos)
         self.hero = Hero()
         self.hunter = Hunter()
-        self.keyboardInput = Input(self.hero, self.hunter)
         self.frameWidth = 100
         self.frameHeight = 40
+        self.keyboardInput = Input(self.hero, self.hunter,self.frameWidht,self.frameHeight)
         self.char_background = ' '
         WConio2.clrscr()
         cursor.hide() 
@@ -87,10 +87,4 @@ class Frame:
         self.hunter.move(self.hero, self.frameWidth, self.frameHeight)
 
     def input(self,key):
-        self.keyboardInput.verifyInput(key, self.frameWidth, self.frameHeight)
-
-        '''
-        self.hero.move(key, self.frameWidth, self.frameHeight)
-        if key in self.hero.teleport:
-            self.hero.last_move = key
-        '''
+        self.keyboardInput.verifyInput(key)

@@ -6,7 +6,6 @@ class Hero(Character):
     def __init__(self):
         self.icon = ['██'] #2 caracteres █ que é 0 219 na ascii
         self.position = [9,15] #lista[x,y]
-        self.last_move = ''
 
         #hitbox[char] == [x,y]
         self.hitbox = {
