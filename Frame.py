@@ -11,7 +11,7 @@ class Frame:
         self.hunter = Hunter()
         self.frameWidth = 100
         self.frameHeight = 40
-        self.keyboardInput = Input(self.hero, self.hunter,self.frameWidht,self.frameHeight)
+        self.keyboardInput = Input(self.hero, self.hunter,self.frameWidth,self.frameHeight)
         self.char_background = ' '
         WConio2.clrscr()
         cursor.hide() 
