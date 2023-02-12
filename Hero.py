@@ -1,4 +1,4 @@
-import WConio2
+import time
 from Character import Character
 #teste
 class Hero(Character):
@@ -8,6 +8,8 @@ class Hero(Character):
         self.position = [9,15] #lista[x,y]
         self.speed = 3
         self.last_move = ''
+        self.last_teleport = time.time()
+        self.teleport_cooldown_time = 3 #seconds
 
         #hitbox[char] == [x,y]
         self.hitbox = {
@@ -53,8 +55,10 @@ class Hero(Character):
             self.position[1] = self.position[1] + 4
             
     def _teleport(self, frame_width, frame_height):
-        teleport = self.teleport[self.last_move]
-        teleport(frame_width,frame_height)
+        if time.time() - self.last_teleport >= self.teleport_cooldown_time:
+            teleport = self.teleport[self.last_move]
+            teleport(frame_width,frame_height)
+            self.last_teleport = time.time()
     
 
     def move(self,key,frame_width, frame_height):
