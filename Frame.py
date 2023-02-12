@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-from Hero import *
-from Hunter import *
-from Input import *
-=======
 from Hero import Hero
 from Enemy import *
->>>>>>> parent of fb75bbc (rename enemy to hunter)
 import WConio2 #pip install WConio2
 import cursor #pip install cursor
 
@@ -13,15 +7,10 @@ class Frame:
     def __init__(self):
         #TODO criação dos objetos (heroi e inimigos)
         self.hero = Hero()
-<<<<<<< HEAD
-        self.hunter = Hunter()
-=======
         self.enemy1 = NormalEnemy()
 
->>>>>>> parent of fb75bbc (rename enemy to hunter)
         self.frameWidth = 100
         self.frameHeight = 40
-        self.keyboardInput = Input(self.hero, self.hunter,self.frameWidth,self.frameHeight)
         self.char_background = ' '
         WConio2.clrscr()
         cursor.hide() 
@@ -43,13 +32,6 @@ class Frame:
             elif n_column == self.hero.hitbox['b'][0]:
                 char = self.hero.icon[0][1:]
 
-<<<<<<< HEAD
-        if characters_in_this_line["hunter"]:
-            if n_column == self.hunter.hitbox['a'][0]:
-                char = self.hunter.icon[0][:1]
-            elif n_column == self.hunter.hitbox['b'][0]:
-                char = self.hunter.icon[0][1:]
-=======
         if characters_in_this_line["enemy1"]:
             if n_column == self.enemy1.hitbox['a'][0]:
                 char = self.enemy1.icon[0][:1]
@@ -62,7 +44,6 @@ class Frame:
 
         #TODO se tem que printar o enemy1
         #TODO o mesmo pros char de cada vilão
->>>>>>> parent of fb75bbc (rename enemy to hunter)
 
         return char
 
@@ -83,13 +64,8 @@ class Frame:
         if self.hero.position[1] == n_current_line:
             characters_in_this_line['hero'] = True
             
-<<<<<<< HEAD
-        if self.hunter.position[1] == n_current_line:
-            characters_in_this_line['hunter'] = True
-=======
         if self.enemy1.position[1] == n_current_line or self.enemy1.hitbox['c'][1] == n_current_line:
             characters_in_this_line['enemy1'] = True
->>>>>>> parent of fb75bbc (rename enemy to hunter)
 
         if characters_in_this_line['hero'] or characters_in_this_line['enemy1']:
             for n_column in range(1,self.frameWidth-1):
@@ -117,4 +93,6 @@ class Frame:
         self.enemy1.move(self.hero, self.frameWidth, self.frameHeight)
 
     def input(self,key):
-        self.keyboardInput.verifyInput(key)
+        self.hero.move(key, self.frameWidth, self.frameHeight)
+        if key in self.hero.teleport:
+            self.hero.last_move = key
