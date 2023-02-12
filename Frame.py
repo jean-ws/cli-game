@@ -1,5 +1,6 @@
-from Hero import Hero
-from Enemy import *
+from Hero import *
+from Hunter import *
+from Input import *
 import WConio2 #pip install WConio2
 import cursor #pip install cursor
 
@@ -7,10 +8,10 @@ class Frame:
     def __init__(self):
         #TODO criação dos objetos (heroi e inimigos)
         self.hero = Hero()
-        self.enemy1 = NormalEnemy()
-
+        self.hunter = Hunter()
         self.frameWidth = 100
         self.frameHeight = 40
+        self.keyboardInput = Input(self.hero, self.hunter,self.frameWidth,self.frameHeight)
         self.char_background = ' '
         WConio2.clrscr()
         cursor.hide() 
@@ -32,18 +33,11 @@ class Frame:
             elif n_column == self.hero.hitbox['b'][0]:
                 char = self.hero.icon[0][1:]
 
-        if characters_in_this_line["enemy1"]:
-            if n_column == self.enemy1.hitbox['a'][0]:
-                char = self.enemy1.icon[0][:1]
-            elif n_column == self.enemy1.hitbox['b'][0]:
-                char = self.enemy1.icon[0][1:]
-            elif n_column == self.enemy1.hitbox['c'][0]:
-                char = self.enemy1.icon[1][:1]
-            elif n_column == self.enemy1.hitbox['d'][0]:
-                char = self.enemy1.icon[1][1:]
-
-        #TODO se tem que printar o enemy1
-        #TODO o mesmo pros char de cada vilão
+        if characters_in_this_line["hunter"]:
+            if n_column == self.hunter.hitbox['a'][0]:
+                char = self.hunter.icon[0][:1]
+            elif n_column == self.hunter.hitbox['b'][0]:
+                char = self.hunter.icon[0][1:]
 
         return char
 
@@ -52,22 +46,22 @@ class Frame:
         print('██', end = '')
     
         #TODO se vilao e heroi na mesma linha (IF ambos)
-        #if self.enemy1.position[1] == self.linhaAtual or self.enemy1.hitbox[2][0] == self.linhaAtual:
+        #if self.hunter.position[1] == self.linhaAtual or self.hunter.hitbox[2][0] == self.linhaAtual:
 
         #TODO se vilao está na linha (ELIF vilao)
         #Se heroi está na linha (ELIF heroi - igual já está)
         characters_in_this_line = {
             'hero': False,
-            'enemy1': False
+            'hunter': False
         }
 
         if self.hero.position[1] == n_current_line:
             characters_in_this_line['hero'] = True
             
-        if self.enemy1.position[1] == n_current_line or self.enemy1.hitbox['c'][1] == n_current_line:
-            characters_in_this_line['enemy1'] = True
+        if self.hunter.position[1] == n_current_line:
+            characters_in_this_line['hunter'] = True
 
-        if characters_in_this_line['hero'] or characters_in_this_line['enemy1']:
+        if characters_in_this_line['hero'] or characters_in_this_line['hunter']:
             for n_column in range(1,self.frameWidth-1):
                 print(self._getChar(n_column,characters_in_this_line), end = '')
 
@@ -89,10 +83,8 @@ class Frame:
         self._drawLines()
         self._borderUpDown()
     
-    def enemy1Move(self):
-        self.enemy1.move(self.hero, self.frameWidth, self.frameHeight)
+    def hunterMove(self):
+        self.hunter.move(self.hero, self.frameWidth, self.frameHeight)
 
     def input(self,key):
-        self.hero.move(key, self.frameWidth, self.frameHeight)
-        if key in self.hero.teleport:
-            self.hero.last_move = key
+        self.keyboardInput.verifyInput(key)
