@@ -15,7 +15,7 @@ class Frame:
         WConio2.clrscr()
         cursor.hide() 
         WConio2.textbackground(0)
-        WConio2.textcolor(4)
+        WConio2.textcolor(7)
 
     
     def _borderUpDown(self):
