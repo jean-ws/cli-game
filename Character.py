@@ -36,6 +36,10 @@ class Character:
     def _teleportDown(self):
         self.position[1] = self.position[1] + 4
 
+    def _teleport(self):
+        movement = self.teleport[self.last_move]
+        movement()
+
     def move(self, movement):
         movement()
         self._attHitbox()

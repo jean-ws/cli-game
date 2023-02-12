@@ -9,9 +9,6 @@ status = True
 
 while status:
 
-    #TODO se tecla for pressionada chama o mover personagem
-    #TODO movimentações dos inimigos
-
     #TODO classe de colisoes - verificações para sair do loop (se ... , status = False)
 
     frame.drawFrame()
