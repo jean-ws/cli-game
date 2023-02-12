@@ -48,19 +48,19 @@ class Input:
         #Hero teleports
         else:
             if character.last_move in ['a','j']:
-                if self.position[0] - 8 >= 1:
+                if character.position[0] - 8 >= 1:
                     movement = character._teleport
             
             if character.last_move in ['d','l']:
-                if self.position[0] + 8 <= self.frame_width - 2:
+                if character.position[0] + 8 <= self.frame_width - 2:
                     movement = character._teleport
     
             if character.last_move in ['w','i']:
-                if self.position[1] - 4 >= 1:
+                if character.position[1] - 4 >= 1:
                     movement = character._teleport
             
             if character.last_move in ['s','k']:
-                if self.position[1] + 4 <= self.frame_height - 2:
+                if character.position[1] + 4 <= self.frame_height - 2:
                     movement = character._teleport
 
         if key in self.hero.teleport:
