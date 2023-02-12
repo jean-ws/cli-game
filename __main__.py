@@ -1,6 +1,5 @@
 from Frame import *
 
-#Cria objetos
 frame = Frame()
 
 #TODO classe de controle (do programa, não do personagem. Score, status, etc...)
