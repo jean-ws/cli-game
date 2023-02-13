@@ -24,7 +24,3 @@ class Character:
     def _moveDown(self,frame_width, frame_height):
         if self.position[1] != frame_height - 1:
             self.position[1] = self.position[1] + 1
-
-    #TODO não atravessa limite do mapa
-    def isOut(self):
-        pass
