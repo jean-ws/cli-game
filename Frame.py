@@ -4,13 +4,11 @@ import WConio2 #pip install WConio2
 import cursor #pip install cursor
 
 class Frame:
-    def __init__(self):
-        #TODO criação dos objetos (heroi e inimigos)
+    def __init__(self,width,height):
         self.hero = Hero()
         self.enemy1 = NormalEnemy()
-
-        self.frameWidth = 100
-        self.frameHeight = 40
+        self.frameWidth = width
+        self.frameHeight = height
         self.char_background = ' '
         WConio2.clrscr()
         cursor.hide() 
