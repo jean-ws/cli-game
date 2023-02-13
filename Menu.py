@@ -104,6 +104,3 @@ class Menu:
 
         self._drawBlankLines(2)
         self._borderUpDown()
-
-menu = Menu(95,40)
-menu.drawScreen()

@@ -2,6 +2,7 @@ from Frame import *
 from GameOver import GameOver
 from Status import *
 from Score import *
+from Menu import *
 import time
 
 width = 95
@@ -9,10 +10,17 @@ height = 40
 frame = Frame(width,height)
 game_status = Status()
 score = Score()
-
+menu = Menu(width,height)
+play = False
 game_start = time.time()
 game_time = 0
 count = 0
+
+menu.drawScreen()
+while not play:
+    if WConio2.kbhit():
+        if ' ' == WConio2.getkey():
+            play = True
 
 while game_status.ingame:
 
@@ -38,5 +46,6 @@ while game_status.ingame:
 
 game_over = GameOver(width,height)
 game_over.drawScreen(score)
+
 while True:
     pass
