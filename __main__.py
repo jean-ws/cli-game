@@ -17,6 +17,8 @@ def drawMainMenu():
         if WConio2.kbhit():
             if ' ' == WConio2.getkey():
                 play = True
+            #TODO elif 'r': draw scoreboard screen
+            #TODO scoreboard class screen
 
 def drawGame():
     
