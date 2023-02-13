@@ -129,5 +129,3 @@ class GameOver:
         self._drawMenu()
 
         self._borderUpDown()
-        print('scores: ', score.scores)
-        print('records: ', score.records)
