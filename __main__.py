@@ -1,18 +1,18 @@
 from Frame import *
+from GameOver import GameOver
 from Status import *
 import time
-#Cria objetos
-frame = Frame()
+
+width = 95
+height = 40
+frame = Frame(width,height)
 game_status = Status()
+
 game_start = time.time()
 game_time = 0
 count = 0
 
 while game_status.ingame:
-
-    #TODO movimentações dos inimigos
-
-    #TODO classe de colisoes - verificações para sair do loop (se ... , status = False)
 
     frame.drawFrame()
     if WConio2.kbhit():
@@ -28,3 +28,7 @@ while game_status.ingame:
     game_status.verifyCollisions(frame.hero,frame.enemy1)
     count += 1
 
+game_over = GameOver(width,height)
+game_over.drawScreen()
+while True:
+    pass
