@@ -26,67 +26,67 @@ class Menu:
     def _drawRunBro(self):
     
         self._drawLeftBorder(5) 
-        print('██' * 3  + '  ' * 2  + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1, end = '') 
-        self._drawRightBorder(5)
+        print('  ' * 10 + '██' * 3  + '  ' * 2  + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1, end = ' ') 
+        self._drawRightBorder(17)
 
         self._drawLeftBorder(5) 
-        print('██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 2 + '  ' * 1 + '██' * 1, end = '')
-        self._drawRightBorder(8)
+        print('  ' * 10 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 2 + '  ' * 1 + '██' * 1, end = ' ')
+        self._drawRightBorder(17)
 
         self._drawLeftBorder(5)
-        print('██' * 3 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 1 + '██' * 2 , end = '')
-        self._drawRightBorder(6)
+        print('  ' * 10 + '██' * 3 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 1 + '██' * 2 , end = ' ')
+        self._drawRightBorder(17)
         
         self._drawLeftBorder(5)
-        print('██' * 1 + '  '* 1 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1 , end = '')
-        self._drawRightBorder(8)
+        print('  ' * 10 + '██' * 1 + '  '* 1 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1 , end = ' ')
+        self._drawRightBorder(17)
 
         self._drawLeftBorder(5)
-        print('██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 2 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + ' ' * 1 + '██' * 1, end = '')
-        self._drawRightBorder(5)
+        print('  ' * 10 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 2 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + ' ' * 1 + '██' * 1, end = '  ')
+        self._drawRightBorder(15)
 
         self._drawLeftBorder(0)
-        print(' ' * 39 + '█' * 1, end = '')
-        self._drawRightBorder(30)
+        print( '  ' * 30 + '█' * 1, end = '  ')
+        self._drawRightBorder(15)
 
         self._drawLeftBorder(5)
-        print('██' * 3 + '  ' * 2 + '██' * 3 + '  ' * 3 + '██' * 2 + '  ' * 1 , end = '')
-        self._drawRightBorder(6)
+        print('  ' * 10 + '██' * 3 + '  ' * 2 + '██' * 3 + '  ' * 3 + '██' * 2 + '  ' * 1 , end = ' ')
+        self._drawRightBorder(17)
 
         self._drawLeftBorder(5)
-        print('██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1 , end = '')
-        self._drawRightBorder(5)
+        print('  ' * 10 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1 , end = ' ')
+        self._drawRightBorder(17)
 
         self._drawLeftBorder(5)
-        print('██' * 3 + '  ' * 2 + '██' * 3 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 , end = '')
-        self._drawRightBorder(6)
+        print('  ' * 10 + '██' * 3 + '  ' * 2 + '██' * 3 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 , end = ' ')
+        self._drawRightBorder(17)
 
         self._drawLeftBorder(5)
-        print('██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 , end = '')
-        self._drawRightBorder(6)
+        print('  ' * 10 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 , end = ' ')
+        self._drawRightBorder(17)
 
         self._drawLeftBorder(5)
-        print('██' * 3 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 2 + '  ' * 1 , end = '')
-        self._drawRightBorder(5)
+        print('  ' * 10 + '██' * 3 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 2 + '  ' * 1 , end = ' ')
+        self._drawRightBorder(17)
     
     def _drawInputs(self):
 
         self._drawLeftBorder(0)
-        print(' '* 14 + "Press [SPACE] for a new game: ", end = '')
-        self._drawRightBorder(7)
+        print(' '* 31 + "Press [SPACE] for a new game: ", end = '')
+        self._drawRightBorder(16)
 
         self._drawLeftBorder(0)
-        print(' '* 14 + "Press [R] for the recors: ", end = '')
-        self._drawRightBorder(7)
+        print(' '* 31 + "Press [R] for the recors: ", end = '  ')
+        self._drawRightBorder(17)
 
     def _drawMadeBy(self):
         self._drawLeftBorder(0)
-        print(' '* 38 + "Made by:")
-        self._drawRightBorder(8)
+        print(' '* 42 + "Made by: ")
+        self._drawRightBorder(48)
 
         self._drawLeftBorder(0)
-        print(' '* 18 + "jean-ws, Mo0inha, buno, gabs")
-        self._drawRightBorder(8)
+        print(' '* 31 + "jean-ws, Mo0inha, buno, gabs")
+        self._drawRightBorder(48)
 
 
     def drawScreen(self):
