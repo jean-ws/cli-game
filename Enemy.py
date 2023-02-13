@@ -12,7 +12,7 @@ class NormalEnemy(Enemy):
     def __init__(self):
         self.icon = ["##","##"] #lista[linha de cima, linha de baixo]
         self.position = [2,5] #lista[x,y]
-        self.speed = 2
+        self.speed = 14
         self.acceptedMoves = {
             'x-': self._moveLeft,
             'x+': self._moveRight,

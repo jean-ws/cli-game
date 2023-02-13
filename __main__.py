@@ -8,6 +8,7 @@ status = True
 game_start = time.time()
 game_time = 0
 count = 0
+lista_de_intervalos = []
 
 while status:
 
@@ -27,11 +28,11 @@ while status:
 
     if game_time >= 1:
 
-        if count*100 % (count / round(game_time,2)) == 0:
-            print("gtime: ", round(game_time,2), '\n count: ', count)
+        if count % frame.enemy1.speed == 0:
+            print("gtime: ", round(game_time,2))
             frame.enemy1Move()
+            print(count)
         #TODO if de acordo com a velocidade do vilao (quanto maior velocidade, mais vezes deve entrar no IF) que executa o frame.enemy1.move
-
     count += 1
 
 #fora do While: game over
