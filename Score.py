@@ -15,23 +15,23 @@ class Score:
         if score > self.record1:
             aux = self.record1
             self.record1 = score
-            self.record2 = aux
             self.record3 = self.record2
             self.record4 = self.record3
             self.record5 = self.record4
+            self.record2 = aux
 
         elif score > self.record2:
             aux = self.record2
             self.record2 = score
-            self.record3 = aux
             self.record4 = self.record3
             self.record5 = self.record4
+            self.record3 = aux
 
         elif score > self.record3:
             aux = self.record3
             self.record3 = score
-            self.record4 = aux
             self.record5 = self.record4
+            self.record4 = aux
 
         elif score > self.record4:
             aux = self.record4
