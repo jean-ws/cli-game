@@ -86,6 +86,18 @@ class Frame:
     
     def enemy1Move(self):
         self.enemy1.move(self.hero, self.frameWidth, self.frameHeight)
+    
+    def enemy2Move(self):
+        self.enemy2.move(self.hero, self.frameWidth, self.frameHeight)
+    
+    def enemy3Move(self):
+        self.enemy3.move(self.hero, self.frameWidth, self.frameHeight)
+
+    def createEnemy2(self):
+        self.enemy2 = NormalEnemy([randint(1,self.frameWidth-2),randint(1,self.frameHeight-2)])
+    
+    def createEnemy3(self):
+        self.enemy3 = NormalEnemy([randint(1,self.frameWidth-2),randint(1,self.frameHeight-2)])
 
     def input(self,key):
         self.hero.move(key, self.frameWidth, self.frameHeight)
