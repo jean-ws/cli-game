@@ -67,15 +67,48 @@ class GameOver:
         print('  ' * 1 + '██' * 2 + '  ' * 4 + '██' * 1 + '  ' * 3 + '██' * 4 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1, end = ' ')
         self._drawRightBorder(self.frameWidth - 82)
     
-    def _drawScore(self):
+    def _drawScore(self,score):
         self._drawLeftBorder(0)
-        print(' '* 14 + "Score: ", end = '')
+
+        if score.currentScore < 1000:
+            print(' '* 14 + "Score:  ", score.currentScore, end = '')
+        elif score.currentScore < 10000:
+            print(' '* 14 + "Score: ", score.currentScore, end = '')
+        elif score.currentScore < 100000:
+            print(' '* 14 + "Score:", score.currentScore, end = '')
+        else:
+            print(' '* 14 + "Score:", '*****', end = '')
+
+
         self._drawRightBorder(7)
 
 
-    def _drawRecord(self):
+    def _drawRecord(self,score):
         self._drawLeftBorder(0)
-        print(' '* 14 + "Record: ", end = '')
+        print(' '* 14 + "Records: ", end = '')
+        self._drawRightBorder(7)
+
+        
+        self._drawLeftBorder(0)
+        print(' '* 14 + "TOP 1: ", score.record1, end = '')
+        self._drawRightBorder(7)
+
+        
+        self._drawLeftBorder(0)
+        print(' '* 14 + "TOP 2: ", score.record2, end = '')
+        self._drawRightBorder(7)
+
+        
+        self._drawLeftBorder(0)
+        print(' '* 14 + "TOP 3: ", score.record3, end = '')
+        self._drawRightBorder(7)
+        
+        self._drawLeftBorder(0)
+        print(' '* 14 + "TOP 4: ", score.record4, end = '')
+        self._drawRightBorder(7)
+
+        self._drawLeftBorder(0)
+        print(' '* 14 + "TOP 5: ", score.record5, end = '')
         self._drawRightBorder(7)
 
     def _drawMenu(self):
@@ -83,8 +116,7 @@ class GameOver:
         print(' '* 18 + "Press [SPACE] to continue ", end = '')
         self._drawRightBorder(8)
 
-
-    def drawScreen(self):
+    def drawScreen(self,score):
         WConio2.gotoxy(0,0)
         self._borderUpDown()
 
@@ -92,8 +124,8 @@ class GameOver:
         self._drawGameOver()
         self._drawBlankLines(3)
 
-        self._drawScore()
-        self._drawRecord()
+        self._drawScore(score)
+        self._drawRecord(score)
         self._drawMenu()
 
         self._borderUpDown()

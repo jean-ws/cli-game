@@ -1,12 +1,14 @@
 from Frame import *
 from GameOver import GameOver
 from Status import *
+from Score import *
 import time
 
 width = 95
 height = 40
 frame = Frame(width,height)
 game_status = Status()
+score = Score()
 
 game_start = time.time()
 game_time = 0
@@ -29,9 +31,12 @@ while game_status.ingame:
             frame.createEnemy2()
 
     game_status.verifyCollisions(frame.hero,frame.enemy1)
+
+    score.currentScore = int(round(game_time,2)*100)
+    score.verifyRecords(score.currentScore)
     count += 1
 
 game_over = GameOver(width,height)
-game_over.drawScreen()
+game_over.drawScreen(score)
 while True:
     pass
