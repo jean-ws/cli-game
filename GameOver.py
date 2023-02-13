@@ -27,47 +27,47 @@ class GameOver:
 
     def _drawGameOver(self):
         
-        self._drawLeftBorder(self.frameWidth - 80) 
-        print(' ' * 2 + '██' * 2  + '  ' * 3  + '██' * 2 + '  ' * 2 + '██' * 1 + '  ' * 3 + '██' * 1 + '  ' * 1 + '██' * 4, end = '') 
-        self._drawRightBorder(self.frameWidth - 80)
-
-        self._drawLeftBorder(self.frameWidth - 80) 
-        print('██' * 1 + ' ' * 8 + '██' * 1 + '  ' * 2 + '██' * 1 + ' ' * 2 + '██' * 2 + '  ' * 1 + '██' * 2 + '  ' * 1 + '██' * 1, end = '')
+        self._drawLeftBorder(self.frameWidth - 82) 
+        print(' ' * 2 + '██' * 2  + '  ' * 3  + '██' * 2 + '  ' * 2 + '██' * 1 + '  ' * 3 + '██' * 1 + '  ' * 1 + '██' * 4, end = ' ') 
         self._drawRightBorder(self.frameWidth - 82)
 
-        self._drawLeftBorder(self.frameWidth - 80)
-        print('██' * 1 + ' ' * 2 + '██' * 2 + '  ' * 1 + '██' * 4 + ' ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 1 + '██' * 3, end = '')
-        self._drawRightBorder(self.frameWidth - 84)
+        self._drawLeftBorder(self.frameWidth - 82) 
+        print('██' * 1 + ' ' * 8 + '██' * 1 + '  ' * 2 + '██' * 1 + ' ' * 2 + '██' * 2 + '  ' * 1 + '██' * 2 + '  ' * 1 + '██' * 1, end = ' ')
+        self._drawRightBorder(self.frameWidth - 79)
+
+        self._drawLeftBorder(self.frameWidth - 82)
+        print('██' * 1 + ' ' * 2 + '██' * 2 + '  ' * 1 + '██' * 4 + ' ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 1 + '██' * 3, end = ' ')
+        self._drawRightBorder(self.frameWidth - 81)
         
-        self._drawLeftBorder(self.frameWidth - 80)
-        print('██' * 1 + ' '* 4 + '██' * 1 + '  ' * 1 + '██' * 1 + ' ' * 4 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 3 + '██' * 1 + '  ' * 1 + '██' * 1, end = '')
-        self._drawRightBorder(self.frameWidth - 82)
+        self._drawLeftBorder(self.frameWidth - 82)
+        print('██' * 1 + ' '* 4 + '██' * 1 + '  ' * 1 + '██' * 1 + ' ' * 4 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 3 + '██' * 1 + '  ' * 1 + '██' * 1, end = ' ')
+        self._drawRightBorder(self.frameWidth - 79)
 
-        self._drawLeftBorder(self.frameWidth - 80)
-        print(' ' * 2 + '██' * 2 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 3 + '██' * 1 + '  ' * 1 + '██' * 4, end = '')
-        self._drawRightBorder(self.frameWidth - 80)
+        self._drawLeftBorder(self.frameWidth - 82)
+        print(' ' * 2 + '██' * 2 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 3 + '██' * 1 + '  ' * 1 + '██' * 4, end = ' ')
+        self._drawRightBorder(self.frameWidth - 82)
 
         self._drawBlankLines(2)
 
-        self._drawLeftBorder(self.frameWidth - 80)
-        print(' ' * 2 + '██' * 2 + '  ' * 2 + '██' * 1 + '  ' * 3 + '██' * 1 + '  ' * 1 + '██' * 4 + '  ' * 1 + '██' * 3, end = '')
-        self._drawRightBorder(self.frameWidth - 84)
+        self._drawLeftBorder(self.frameWidth - 82)
+        print(' ' * 2 + '██' * 2 + '  ' * 2 + '██' * 1 + '  ' * 3 + '██' * 1 + '  ' * 1 + '██' * 4 + '  ' * 1 + '██' * 3, end = ' ')
+        self._drawRightBorder(self.frameWidth - 81)
 
-        self._drawLeftBorder(self.frameWidth - 80)
-        print('██' * 1 + ' ' * 4 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 3 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 4 + '██' * 1 + '  ' * 2 + '██' * 1, end = '')
-        self._drawRightBorder(self.frameWidth - 80)
+        self._drawLeftBorder(self.frameWidth - 82)
+        print('██' * 1 + ' ' * 4 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 3 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 4 + '██' * 1 + '  ' * 2 + '██' * 1, end = ' ')
+        self._drawRightBorder(self.frameWidth - 82)
 
-        self._drawLeftBorder(self.frameWidth - 80)
-        print('██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 3 + '  ' * 2 + '██' * 3, end = '')
-        self._drawRightBorder(self.frameWidth - 84)
+        self._drawLeftBorder(self.frameWidth - 82)
+        print('██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 3 + '  ' * 2 + '██' * 3, end = ' ')
+        self._drawRightBorder(self.frameWidth - 81)
 
-        self._drawLeftBorder(self.frameWidth - 80)
-        print('██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 4 + '██' * 1 + '  ' * 1 + '██' * 1, end = '')
-        self._drawRightBorder(self.frameWidth - 84)
+        self._drawLeftBorder(self.frameWidth - 82)
+        print('██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1 + '  ' * 4 + '██' * 1 + '  ' * 1 + '██' * 1, end = ' ')
+        self._drawRightBorder(self.frameWidth - 81)
 
-        self._drawLeftBorder(self.frameWidth - 80)
-        print('  ' * 1 + '██' * 2 + '  ' * 4 + '██' * 1 + '  ' * 3 + '██' * 4 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1, end = '')
-        self._drawRightBorder(self.frameWidth - 80)
+        self._drawLeftBorder(self.frameWidth - 82)
+        print('  ' * 1 + '██' * 2 + '  ' * 4 + '██' * 1 + '  ' * 3 + '██' * 4 + '  ' * 1 + '██' * 1 + '  ' * 2 + '██' * 1, end = ' ')
+        self._drawRightBorder(self.frameWidth - 82)
     
     def _drawScore(self):
         self._drawLeftBorder(0)
