@@ -1,16 +1,6 @@
-#TODO classe que controla o score do jogo
-#chamar no main
-#aumentar a velocidade dos inimigos conforme o score aumenta
-
 class Score:
     def __init__(self):
-        self.records = [
-            100,
-            100,
-            100,
-            100,
-            100
-        ]
+        self.records = [100, 100, 100, 100, 100]
         self.scores = [ 100, 100, 100, 100, 100]
         self.currentScore = 0
 
