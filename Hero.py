@@ -3,9 +3,9 @@ from Character import Character
 #teste
 class Hero(Character):
     #método construtor
-    def __init__(self):
-        self.icon = ['██'] #2 caracteres █ que é 0 219 na ascii
-        self.position = [9,15] #lista[x,y]
+    def __init__(self,position):
+        self.icon = ['██'] #two █. Its the 219 in ascii
+        self.position = position #list[x,y]
         self.speed = 3
         self.last_move = ''
         self.last_teleport = time.time()

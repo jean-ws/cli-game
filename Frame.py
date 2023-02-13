@@ -1,3 +1,4 @@
+from random import randint
 from Hero import Hero
 from Enemy import *
 import WConio2 #pip install WConio2
@@ -5,10 +6,10 @@ import cursor #pip install cursor
 
 class Frame:
     def __init__(self,width,height):
-        self.hero = Hero()
-        self.enemy1 = NormalEnemy()
         self.frameWidth = width
         self.frameHeight = height
+        self.hero = Hero([randint(1,self.frameWidth-2),randint(1,self.frameHeight-2)])
+        self.enemy1 = NormalEnemy([randint(1,self.frameWidth-2),randint(1,self.frameHeight-2)])
         self.char_background = ' '
         WConio2.clrscr()
         cursor.hide() 
@@ -35,10 +36,6 @@ class Frame:
                 char = self.enemy1.icon[0][:1]
             elif n_column == self.enemy1.hitbox['b'][0]:
                 char = self.enemy1.icon[0][1:]
-            elif n_column == self.enemy1.hitbox['c'][0]:
-                char = self.enemy1.icon[1][:1]
-            elif n_column == self.enemy1.hitbox['d'][0]:
-                char = self.enemy1.icon[1][1:]
 
         #TODO se tem que printar o enemy1
         #TODO o mesmo pros char de cada vilão
@@ -62,7 +59,7 @@ class Frame:
         if self.hero.position[1] == n_current_line:
             characters_in_this_line['hero'] = True
             
-        if self.enemy1.position[1] == n_current_line or self.enemy1.hitbox['c'][1] == n_current_line:
+        if self.enemy1.position[1] == n_current_line:
             characters_in_this_line['enemy1'] = True
 
         if characters_in_this_line['hero'] or characters_in_this_line['enemy1']:

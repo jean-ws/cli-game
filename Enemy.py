@@ -1,4 +1,3 @@
-from shutil import move
 from Character import Character
 
 #TODO classe de todos inimigos
@@ -9,10 +8,10 @@ class Enemy(Character):
 class NormalEnemy(Enemy):
     #atributos que somente o inimigo normal terá
 
-    def __init__(self):
-        self.icon = ["##","##"] #lista[linha de cima, linha de baixo]
-        self.position = [2,5] #lista[x,y]
-        self.speed = 15
+    def __init__(self,position):
+        self.icon = ["██"] #lista[linha de cima, linha de baixo]
+        self.position = position #lista[x,y]
+        self.speed = 20 #the lower the number, the higher speed
         self.acceptedMoves = {
             'x-': self._moveLeft,
             'x+': self._moveRight,
@@ -23,16 +22,12 @@ class NormalEnemy(Enemy):
         self.hitbox = {
             'a' : self.position,
             'b' : [self.position[0] + 1, self.position[1]],
-            'c' : [self.position[0], self.position[1] + 1],
-            'd' : [self.position[0] + 1,self.position[1] + 1]
         }
     
     def _attHitbox(self):
         self.hitbox = {
             'a' : self.position,
             'b' : [self.position[0] + 1, self.position[1]],
-            'c' : [self.position[0], self.position[1] + 1],
-            'd' : [self.position[0] + 1,self.position[1] + 1]
         }
 
     def trackHero(self,hero):
