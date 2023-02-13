@@ -19,6 +19,9 @@ class GameOver:
         WConio2.textcolor(self.vermelho)
         print('█' + '█' * self.frameWidth + '█')
 
+    def _drawLeftBorder(self,number_of_spaces):
+        WConio2.textcolor(self.vermelho)
+        print('██' + '  ' * number_of_spaces, end = '')
 
     def _drawBlankLine(self,n_current_line):
         
@@ -32,22 +35,29 @@ class GameOver:
 
     def _drawGameOver(self):
         
-        WConio2.textcolor(self.vermelho)
-        #print('██', end = '')
+        self._drawLeftBorder(5)
         
         WConio2.textcolor(self.roxo)
-        #print("aaa")
-        #print("aaa")
         print(' ' * 2 + '██' * 2  + ' ' * 6  + '██' * 2 + ' ' * 4 + '██' * 1 + ' ' * 6 + '██' * 1 + ' ' * 2 + '██' * 4)
+        self._drawLeftBorder(5)
         print('██' * 1 + ' ' * 8 + '██' * 1 + ' ' * 4 + '██' * 1 + ' ' * 2 + '██' * 2 + ' ' * 2 + '██' * 2 + ' ' * 2 + '██' * 1)
+        self._drawLeftBorder(5)
         print('██' * 1 + ' ' * 2 + '██' * 2 + ' ' * 2 + '██' * 4 + ' ' * 2 + '██' * 1 + ' ' * 2 + '██' * 1 + ' ' * 2 + '██' * 1 + ' ' * 2 + '██' * 3)
+        self._drawLeftBorder(5)
         print('██' * 1 + ' '* 4 + '██' * 1 + ' ' * 2 + '██' * 1 + ' ' * 4 + '██' * 1 + ' ' * 2 + '██' * 1 + ' ' * 6 + '██' * 1 + ' ' * 2 + '██' * 1)
+        self._drawLeftBorder(5)
         print(' ' * 2 + '██' * 2 + ' ' * 4 + '██' * 1 + ' ' * 4 + '██' * 1 + ' ' * 2 + '██' * 1 + ' ' * 6 + '██' * 1 + ' ' * 2 + '██' * 4)
+        self._drawLeftBorder(5)
         print()
+        self._drawLeftBorder(5)
         print(' ' * 2 + '██' * 2 + ' ' * 4 + '██' * 1 + ' ' * 6 + '██' * 1 + ' ' * 2 + '██' * 4 + ' ' * 2 + '██' * 3)
+        self._drawLeftBorder(5)
         print('██' * 1 + ' ' * 4 + '██' * 1 + ' ' * 2 + '██' * 1 + ' ' * 6 + '██' * 1 + ' ' * 2 + '██' * 1 + ' ' * 8 + '██' * 1 + ' ' * 4 + '██' * 1)
+        self._drawLeftBorder(5)
         print('██' * 1 + ' ' * 4 + '██' * 1 + ' ' * 4 + '██' * 1 + ' ' * 2 + '██' * 1 + ' ' * 4 + '██' * 3 + ' ' * 4 + '██' * 3)
+        self._drawLeftBorder(5)
         print('██' * 1 + ' ' * 4 + '██' * 1 + ' ' * 4 + '██' * 1 + ' ' * 2 + '██' * 1 + ' ' * 4 + '██' * 1 + ' ' * 8 + '██' * 1 + ' ' * 2 + '██' * 1)
+        self._drawLeftBorder(5)
         print(' ' * 2 + '██' * 2 + ' ' * 8 + '██' * 1 + ' ' * 6 + '██' * 4 + ' ' * 2 + '██' * 1 + ' ' * 4 + '██' * 1)
 
         #TODO desenho do game over
