@@ -1,3 +1,4 @@
+from shutil import move
 from Character import Character
 
 #TODO classe de todos inimigos
@@ -10,8 +11,8 @@ class NormalEnemy(Enemy):
 
     def __init__(self):
         self.icon = ["##","##"] #lista[linha de cima, linha de baixo]
-        self.position = [2,10] #lista[x,y]
-        self.speed = 3 
+        self.position = [2,5] #lista[x,y]
+        self.speed = 2
         self.acceptedMoves = {
             'x-': self._moveLeft,
             'x+': self._moveRight,
@@ -34,12 +35,21 @@ class NormalEnemy(Enemy):
             'd' : [self.position[0] + 1,self.position[1] + 1]
         }
 
-    def trackHero():
-        #TODO trackHero
-        pass
+    def trackHero(self,hero):
+        
+        if hero.position[0] > self.position[0]:
+            movement = 'x+'
+        elif hero.position[0] < self.position[0]:
+            movement = 'x-'
+        elif hero.position[1] > self.position[1]:
+            movement = 'y+'
+        elif hero.position[1] < self.position[1]:
+            movement = 'y-'
+        
+        return movement
 
     def move(self,hero,frame_width, frame_height):
-        movement = 'x+' #TODO encaixar com o metodo trackHero
+        movement = self.trackHero(hero)
         action = self.acceptedMoves[movement]
         action(frame_width, frame_height)
         self._attHitbox()
