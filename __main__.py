@@ -7,45 +7,58 @@ import time
 
 width = 95
 height = 40
-frame = Frame(width,height)
-game_status = Status()
 score = Score()
-menu = Menu(width,height)
-play = False
-game_start = time.time()
-game_time = 0
-count = 0
 
-menu.drawScreen()
-while not play:
-    if WConio2.kbhit():
-        if ' ' == WConio2.getkey():
-            play = True
+def drawMainMenu():   
+    menu = Menu(width,height)
+    menu.drawScreen()
+    play = False
+    while not play:
+        if WConio2.kbhit():
+            if ' ' == WConio2.getkey():
+                play = True
 
-while game_status.ingame:
-
-    frame.drawFrame()
-    if WConio2.kbhit():
-        frame.input(WConio2.getkey())
+def drawGame():
     
-    game_time = time.time() - game_start
+    frame = Frame(width,height)
+    game_status = Status()
+    game_start = time.time()
+    game_time = 0
+    count = 0
 
-    if game_time >= 1: #waits 1 second before the enemy start to track the hero
+    while game_status.ingame:
+        play = False
 
-        if count % frame.enemy1.speed == 0:
-            frame.enemy1Move()
+        frame.drawFrame()
+        if WConio2.kbhit():
+            frame.input(WConio2.getkey())
+        
+        game_time = time.time() - game_start
 
-        if game_time > 10:
-            frame.createEnemy2()
+        if game_time >= 1: #waits 1 second before the enemy start to track the hero
 
-    game_status.verifyCollisions(frame.hero,frame.enemy1)
+            if count % frame.enemy1.speed == 0:
+                frame.enemy1Move()
 
-    score.currentScore = int(round(game_time,2)*100)
-    score.verifyRecords(score.currentScore)
-    count += 1
+            if game_time > 10:
+                frame.createEnemy2()
 
-game_over = GameOver(width,height)
-game_over.drawScreen(score)
+        game_status.verifyCollisions(frame.hero,frame.enemy1)
+
+        score.currentScore = int(round(game_time,2)*100)
+        score.verifyRecords(score.currentScore)
+        count += 1
+
+def drawGameOver():
+    play = False
+    game_over = GameOver(width,height)
+    game_over.drawScreen(score)
+    while not play:
+        if WConio2.kbhit():
+            if ' ' == WConio2.getkey():
+                play = True
 
 while True:
-    pass
+    drawMainMenu()
+    drawGame()
+    drawGameOver()
