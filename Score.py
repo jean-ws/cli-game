@@ -4,39 +4,42 @@
 
 class Score:
     def __init__(self):
-        self.record1 = 0
-        self.record2 = 0
-        self.record3 = 0
-        self.record4 = 0
-        self.record5 = 0
+        self.records = [
+            100,
+            100,
+            100,
+            100,
+            100
+        ]
+        self.aux = [
+            100,
+            100,
+            100,
+            100,
+            100
+        ]
         self.currentScore = 0
 
-    def verifyRecords(self,score):
-        if score > self.record1:
-            aux = self.record1
-            self.record1 = score
-            self.record3 = self.record2
-            self.record4 = self.record3
-            self.record5 = self.record4
-            self.record2 = aux
+    '''    def attAux(self):
+            aux = [
+                self.records[0],
+                self.records[1],
+                self.records[2],
+                self.records[3],
+                self.records[4]
+            ]
+    '''
+    def verifyRecords(self):
 
-        elif score > self.record2:
-            aux = self.record2
-            self.record2 = score
-            self.record4 = self.record3
-            self.record5 = self.record4
-            self.record3 = aux
+        aux = []
+        for i in range(5):
 
-        elif score > self.record3:
-            aux = self.record3
-            self.record3 = score
-            self.record5 = self.record4
-            self.record4 = aux
+            if self.currentScore > self.records[i]:
+                
+                for j in range(i):
+                    aux.append(self.records[i])
 
-        elif score > self.record4:
-            aux = self.record4
-            self.record4 = score
-            self.record5 = aux
+                self.records[0] = self.currentScore
 
-        elif score > self.record5:
-            self.record5 = score
+                for i in range(1,4):
+                    self.records[i] = aux[(i-1)]

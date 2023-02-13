@@ -48,11 +48,14 @@ def drawGame():
         game_status.verifyCollisions(frame.hero,frame.enemy1)
 
         score.currentScore = int(round(game_time,2)*100)
-        score.verifyRecords(score.currentScore)
+
         count += 1
 
 def drawGameOver():
     play = False
+
+    score.verifyRecords()
+
     game_over = GameOver(width,height)
     game_over.drawScreen(score)
     while not play:

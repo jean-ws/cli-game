@@ -87,23 +87,23 @@ class GameOver:
 
         
         self._drawLeftBorder(20)
-        print( "TOP 1: ", score.record1, end = '')
+        print( "TOP 1: ", score.records[0], end = '')
         self._drawRightBorder(21)
 
         self._drawLeftBorder(20)
-        print( "TOP 2: ", score.record2, end = '')
+        print( "TOP 2: ", score.records[1], end = '')
         self._drawRightBorder(21)
 
         self._drawLeftBorder(20)
-        print( "TOP 3: ", score.record3, end = '')
+        print( "TOP 3: ", score.records[2], end = '')
         self._drawRightBorder(21)
         
         self._drawLeftBorder(20)
-        print( "TOP 4: ", score.record4, end = '')
+        print( "TOP 4: ", score.records[3], end = '')
         self._drawRightBorder(21)
 
         self._drawLeftBorder(20)
-        print( "TOP 5: ", score.record5, end = '')
+        print( "TOP 5: ", score.records[4], end = '')
         self._drawRightBorder(21)
 
     def _drawMenu(self):
