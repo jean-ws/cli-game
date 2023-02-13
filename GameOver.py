@@ -87,8 +87,18 @@ class GameOver:
 
         
         self._drawLeftBorder(20)
-        print( "TOP 1: ", score.records[0], end = '')
-        self._drawRightBorder(21)
+        if score.records[0] < 1000:
+            print( "TOP 1: ", score.records[0], end = '')
+            self._drawRightBorder(21)
+        elif score.records[0] < 10000:
+            print( "TOP 1:", score.records[0], end = '')
+            self._drawRightBorder(21)
+        elif score.records[0] < 100000:
+            print( "TOP 1:", score.records[0], end = '')
+            self._drawRightBorder(20)
+        else:
+            print( "TOP 1:", 99999, end = '')
+            self._drawRightBorder(20)
 
         self._drawLeftBorder(20)
         print( "TOP 2: ", score.records[1], end = '')
