@@ -71,50 +71,49 @@ class GameOver:
         self._drawLeftBorder(0)
 
         if score.currentScore < 1000:
-            print(' '* 14 + "Score:  ", score.currentScore, end = '')
+            print(' '* 25 + "Score:  ", score.currentScore, end = '')
         elif score.currentScore < 10000:
-            print(' '* 14 + "Score: ", score.currentScore, end = '')
+            print(' '* 25 + "Score: ", score.currentScore, end = '')
         elif score.currentScore < 100000:
-            print(' '* 14 + "Score:", score.currentScore, end = '')
+            print(' '* 25 + "Score:", score.currentScore, end = '')
         else:
-            print(' '* 14 + "Score:", '*****', end = '')
-
-
-        self._drawRightBorder(7)
-
+            print(' '* 25 + "Score:", '*****', end = '')
+        self._drawRightBorder(28)
 
     def _drawRecord(self,score):
         self._drawLeftBorder(0)
-        print(' '* 14 + "Records: ", end = '')
-        self._drawRightBorder(7)
+        print(' '* 25 + "Records: ", end = ' ')
+        self._drawRightBorder(29)
 
         
-        self._drawLeftBorder(0)
-        print(' '* 14 + "TOP 1: ", score.record1, end = '')
-        self._drawRightBorder(7)
+        self._drawLeftBorder(20)
+        print( "TOP 1: ", score.record1, end = '')
+        self._drawRightBorder(21)
 
-        
-        self._drawLeftBorder(0)
-        print(' '* 14 + "TOP 2: ", score.record2, end = '')
-        self._drawRightBorder(7)
+        self._drawLeftBorder(20)
+        print( "TOP 2: ", score.record2, end = '')
+        self._drawRightBorder(21)
 
+        self._drawLeftBorder(20)
+        print( "TOP 3: ", score.record3, end = '')
+        self._drawRightBorder(21)
         
-        self._drawLeftBorder(0)
-        print(' '* 14 + "TOP 3: ", score.record3, end = '')
-        self._drawRightBorder(7)
-        
-        self._drawLeftBorder(0)
-        print(' '* 14 + "TOP 4: ", score.record4, end = '')
-        self._drawRightBorder(7)
+        self._drawLeftBorder(20)
+        print( "TOP 4: ", score.record4, end = '')
+        self._drawRightBorder(21)
 
-        self._drawLeftBorder(0)
-        print(' '* 14 + "TOP 5: ", score.record5, end = '')
-        self._drawRightBorder(7)
+        self._drawLeftBorder(20)
+        print( "TOP 5: ", score.record5, end = '')
+        self._drawRightBorder(21)
 
     def _drawMenu(self):
         self._drawLeftBorder(0)
-        print(' '* 18 + "Press [SPACE] to continue ", end = '')
-        self._drawRightBorder(8)
+        print(' '* 33 + "Press [SPACE] to continue ", end = '')
+        self._drawRightBorder(17)
+
+        self._drawLeftBorder(0)
+        print('', end = ' ')
+        self._drawRightBorder(46)
 
     def drawScreen(self,score):
         WConio2.gotoxy(0,0)
@@ -126,6 +125,7 @@ class GameOver:
 
         self._drawScore(score)
         self._drawRecord(score)
+        self._drawBlankLines(1)
         self._drawMenu()
 
         self._borderUpDown()
