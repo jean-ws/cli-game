@@ -11,7 +11,8 @@ class NormalEnemy(Enemy):
     def __init__(self,position):
         self.icon = ["██"] #lista[linha de cima, linha de baixo]
         self.position = position #lista[x,y]
-        self.speed = 20 #the lower the number, the higher speed
+        self.speed = 18 #the lower the number, the higher speed
+        self.verticalMove = False
         self.acceptedMoves = {
             'x-': self._moveLeft,
             'x+': self._moveRight,
@@ -45,8 +46,17 @@ class NormalEnemy(Enemy):
 
     def move(self,hero,frame_width, frame_height):
         movement = self.trackHero(hero)
-        action = self.acceptedMoves[movement]
-        action(frame_width, frame_height)
+        
+        if movement[:1] == 'y': #slows verticals movements
+            if self.verticalMove:
+                self.verticalMove = False
+            else:
+                action = self.acceptedMoves[movement]
+                action(frame_width, frame_height)
+        else:
+            action = self.acceptedMoves[movement]
+            action(frame_width, frame_height)
+
         self._attHitbox()
         
     #TODO metodo que segue o heroi (usar velocidade)

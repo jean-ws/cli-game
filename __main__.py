@@ -25,6 +25,9 @@ while game_status.ingame:
         if count % frame.enemy1.speed == 0:
             frame.enemy1Move()
 
+        if game_time > 10:
+            frame.createEnemy2()
+
     game_status.verifyCollisions(frame.hero,frame.enemy1)
     count += 1
 
