@@ -27,15 +27,6 @@ class GameOver:
         WConio2.textcolor(self.vermelho)
         print('  ' * number_of_spaces + '██')
 
-    def _drawBlankLine(self,n_current_line):
-        
-        WConio2.textcolor(self.vermelho)
-        print('██', end = '')
-        
-        print(self.char_background * (self.frameWidth - 2), end = '')
-        
-        WConio2.textcolor(self.vermelho)
-        print('██')
 
     def _drawGameOver(self):
         
@@ -71,7 +62,6 @@ class GameOver:
         print('', end = '')
         self._drawRightBorder(30)
 
-
         self._drawLeftBorder(5)
         print(' ' * 2 + '██' * 2 + '  ' * 2 + '██' * 1 + '  ' * 3 + '██' * 1 + '  ' * 1 + '██' * 4 + '  ' * 1 + '██' * 3, end = '')
         self._drawRightBorder(6)
@@ -98,8 +88,6 @@ class GameOver:
         self._drawLeftBorder(0)
         print('', end = '')
         self._drawRightBorder(30)
-        
-
     
     def _drawScore(self):
         self._drawLeftBorder(0)
@@ -139,14 +127,6 @@ class GameOver:
         self._drawLeftBorder(0)
         print('', end = '')
         self._drawRightBorder(30)
-
-    def _drawBlankLines(self):
-        #TODO
-        for n_current_line in range(self.frameHeight):
-            if n_current_line != 0 and n_current_line != self.frameHeight:
-                self._drawLine(n_current_line)
-
-
 
     def drawScreen(self):
         WConio2.gotoxy(0,0)
