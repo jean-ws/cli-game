@@ -81,12 +81,12 @@ class Menu:
 
     def _drawMadeBy(self):
         self._drawLeftBorder(0)
-        print(' '* 42 + "Made by: ")
-        self._drawRightBorder(48)
+        print(' '* 42 + "Made by: ", end = '')
+        self._drawRightBorder(21)
 
         self._drawLeftBorder(0)
-        print(' '* 31 + "jean-ws, Mo0inha, buno, gabs")
-        self._drawRightBorder(48)
+        print(' '* 31 + "jean-ws, Mo0inha, buno, gabs", end = '')
+        self._drawRightBorder(17)
 
 
     def drawScreen(self):
