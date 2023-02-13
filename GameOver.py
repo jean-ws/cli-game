@@ -5,12 +5,10 @@ class GameOver:
     def __init__(self,width,height):
         self.frameWidth = width
         self.frameHeight = height
-        self.char_background = ' '
         WConio2.clrscr()
         cursor.hide() 
         WConio2.textbackground(0)
         WConio2.textcolor(4)
-        pass
 
     def _borderUpDown(self):
         print('█' + '█' * self.frameWidth + '█')
