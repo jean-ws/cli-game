@@ -114,15 +114,20 @@ class GameOver:
         print('', end = '')
         self._drawRightBorder(30)
 
-        pass
+    def _drawRecord(self):
+        self._drawLeftBorder(0)
+        print('', end = '')
+        self._drawRightBorder(30)
 
-    def _drawRecord():
-        #TODO
-        pass
+        self._drawLeftBorder(0)
+        print(' '* 14 + "Record: ", end = '')
+        self._drawRightBorder(7)
+
+        self._drawLeftBorder(0)
+        print('', end = '')
+        self._drawRightBorder(30)
 
     def _drawMenu(self):
-        #TODO
-        
         self._drawLeftBorder(0)
         print('', end = '')
         self._drawRightBorder(30)
@@ -148,9 +153,9 @@ class GameOver:
         self._borderUpDown()
         self._drawGameOver()
         self._drawScore()
+        self._drawRecord()
         self._drawMenu()
         self._borderUpDown()
-        
 
 gover = GameOver()
 gover.drawScreen()
